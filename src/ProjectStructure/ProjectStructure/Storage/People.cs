@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using ProjectStructure.Model;
 
@@ -14,11 +15,15 @@ namespace ProjectStructure.Storage
             _people.Add(person);
         }
 
-        public void PrintAllAddresses()
+        public void PrintSummary()
         {
             foreach (var person in _people)
             {
-                Console.WriteLine($"{person.Name} lives at {person.Address.Street} {person.Address.Number}, {person.Address.ZipCode}, {person.Address.Country}.");
+                Console.WriteLine(
+                    $"{person.Name} bor på {person.Address.Street} {person.Address.Number}, " +
+                    $"{person.Address.ZipCode}, {person.Address.Country}, " +
+                    $"og er født {person.Birthday.ToString("D", CultureInfo.CurrentCulture)}."
+                );
             }
         }
     }
