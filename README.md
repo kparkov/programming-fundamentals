@@ -9,7 +9,7 @@ Kurset er et grundlæggende kursus i grundlæggende programmering med valg af sp
 
 ## Hvad kigger jeg på?
 
-Du kigger lige nu på forsiden af et større kodeprojekt, der ligger på Github (en mappe med filer). Github er en tjeneste, der er vært for softwareprojekter. Alle såkaldte open source projekter er offentligt tilgængelige. Github kan sammenlignes lidt med softwareudviklernes Dropbox: når man lægger nye ændringer op i Github, kan de øvrige udviklere synkronisere deres lokale maskine med Github, hvorefter de får den nyeste version af koden. Githubs standard-adfærd er at vise indholdet af `README.md` fra top-folderen på forsiden, og det er indholdet af den fil du læser.
+Du kigger lige nu på forsiden af et større kodeprojekt (en mappe med filer), der ligger på Github. Github er en tjeneste, der er vært for softwareprojekter. Alle såkaldte open source projekter er offentligt tilgængelige. Github kan sammenlignes lidt med softwareudviklernes Dropbox: når man lægger nye ændringer op i Github, kan de øvrige udviklere synkronisere deres lokale maskine med Github, hvorefter de får den nyeste version af koden. Githubs standard-adfærd er at vise indholdet af `README.md` fra top-folderen på forsiden, og det er indholdet af den fil du læser.
 
 Når du har læst resten af denne instruktion igennem, kan du navigere rundt i folderstrukturen ovenfor, for at se koden. Målet med instruktionen er, at du skal opsætte en lokal, synkroniseret kopi på din egen maskine.
 
