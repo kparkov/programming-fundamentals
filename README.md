@@ -28,4 +28,4 @@ Når du har læst resten af denne instruktion igennem, kan du navigere rundt i f
 1. Download og installér [Github Desktop](https://desktop.github.com/). Github Desktop anvendes til at hente koden fra dette projekt ned til din lokale computer, og til efterfølgende at hente nye versioner, når koden opdateres.
 1. Åbn Github Desktop og login. Brug værktøjet til at *klone* dette projekt ud fra den grønne "clone or download" knap ovenfor, til din lokale maskine. Tryk på den grønne knap, og vælg muligheden  "Open in Desktop". ([Detaljerede instruktioner, hvis det ikke virker for dig](https://services.github.com/on-demand/github-desktop/clone-repository-github-desktop))
 1. Åbn Visual Studio Community og tryk på *open project / solution*. Åbn filen `<projektmappe>\src\Week 1\HelloWorld\HelloWorld.sln`. Tryk F5 eller tryk på det grønne play-tegn, når projektet er åbent.
-1. Hvis du ser en opmuntrende besked, er alt korrekt opsat.
+1. Hvis du ser en opmuntrende besked, er alt korrekt opsat. Projektmappen er, hvis du ikke selv valgte en lokation, i mappen "Github" i din Dokumenter-mappe.
