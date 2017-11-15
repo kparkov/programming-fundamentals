@@ -33,6 +33,8 @@ Når installationen i starten spørger, hvilke komponenter du ønsker at tilføj
 - Web & cloud > ASP.NET and web development
 - Other toolsets > .NET Core cross-platform development
 
+Hvis du allerede har installeret Visual Studio, og ikke har fået disse tre komponenter med, kan du modificere installationen ved at åbne værktøjet *Visual Studio Installer* og vælge *Modify*.
+
 ### 2. Opret en bruger på Github
 
 [Opret nu en bruger](https://github.com/join?source=header-home) på dette site, Github. Hvis du allerede har en bruger, kan du fortsætte til næste punkt.
