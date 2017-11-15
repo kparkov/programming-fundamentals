@@ -23,9 +23,34 @@ Når du har læst resten af denne instruktion igennem, kan du navigere rundt i f
 
 ## Forberedelse til første gang
 
-1. Først skal du downloade og installere [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) på den laptop, du skal anvende. Det er udviklingsværktøjet, som vi skriver den faktiske kode i. Vær sikker på, at du vælger Community-udgaven, som er den gratis version.
-1. [Opret nu en bruger](https://github.com/join?source=header-home) på dette site, Github. Hvis du allerede har en bruger, kan du fortsætte til næste punkt.
-1. Download og installér [Github Desktop](https://desktop.github.com/). Github Desktop anvendes til at hente koden fra dette projekt ned til din lokale computer, og til efterfølgende at hente nye versioner, når koden opdateres.
-1. Åbn Github Desktop og login. Brug værktøjet til at *klone* dette projekt ud fra den grønne "clone or download" knap ovenfor, til din lokale maskine. Tryk på den grønne knap, og vælg muligheden  "Open in Desktop". ([Detaljerede instruktioner, hvis det ikke virker for dig](https://services.github.com/on-demand/github-desktop/clone-repository-github-desktop))
-1. Åbn Visual Studio Community og tryk på *open project / solution*. Åbn filen `<projektmappe>\src\Week 1\HelloWorld\HelloWorld.sln`. Projektmappen er, hvis du ikke selv valgte en lokation, i mappen "Github" i din Dokumenter-mappe. Tryk F5 eller tryk på det grønne play-tegn, når projektet er åbent.
-1. Hvis du ser en opmuntrende besked, er alt korrekt opsat.
+### 1. Installation af Visual Studio Community 2017 
+
+Først skal du downloade og installere [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) på den laptop, du skal anvende. Det er udviklingsværktøjet, som vi skriver den faktiske kode i. Vær sikker på, at du vælger Community-udgaven, som er den gratis version.
+
+Når installationen i starten spørger, hvilke komponenter du ønsker at tilføje, skal du vælge følgende 3:
+
+- Windows > .NET desktop development
+- Web & cloud > ASP.NET and web development
+- Other toolsets > .NET Core cross-platform development
+
+### 2. Opret en bruger på Github
+
+[Opret nu en bruger](https://github.com/join?source=header-home) på dette site, Github. Hvis du allerede har en bruger, kan du fortsætte til næste punkt.
+
+### 3. Installation af Github Desktop
+
+Download og installér [Github Desktop](https://desktop.github.com/). Github Desktop anvendes til at hente koden fra dette projekt ned til din lokale computer, og til efterfølgende at hente nye versioner, når koden opdateres.
+
+### 4. Hent koden med Github Desktop
+
+Åbn Github Desktop og login. Brug værktøjet til at *klone* dette projekt ud fra den grønne "clone or download" knap ovenfor, til din lokale maskine. Tryk på den grønne knap, og vælg muligheden  "Open in Desktop". Hvis dette ikke virker, kan du kopiere URL'en og anvende URL'en til at sætte ind i Github Desktops dialog-boks til at klone.
+
+Se eventuelt [den officielle dokumentation](https://services.github.com/on-demand/github-desktop/clone-repository-github-desktop).
+
+### 5. Åbn projektet i Visual Studio
+
+Åbn Visual Studio Community og tryk på *open project / solution*. Åbn filen `<projektmappe>\src\Week 1\HelloWorld\HelloWorld.sln`. 
+
+Projektmappen er, hvis du ikke selv valgte en lokation, i mappen "Github" i din Dokumenter-mappe. Tryk F5 eller tryk på det grønne play-tegn, når projektet er åbent.
+
+Hvis du ser en opmuntrende besked, er alt korrekt opsat.
