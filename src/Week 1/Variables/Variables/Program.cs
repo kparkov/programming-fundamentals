@@ -38,8 +38,10 @@ namespace Variables
             // An expression can be a calculation
             int fingersOnOneHand = 1 + 1 + 1 + 1 + 1;
             int fingersOnBothHands = 2 * fingersOnOneHand;
-            Console.WriteLine("There are " + fingersOnBothHands + " fingers on a pair of hands.");
 
+            // string concatenation
+            string fingerSummary = "There are " + fingersOnBothHands + " fingers on a pair of hands.";
+            Console.WriteLine(fingerSummary);
 
             // declaration without assignment. Will resolve to the default value of the type (for int, that is 0).
             int peopleInParliament;
@@ -143,6 +145,8 @@ namespace Variables
             // CODE SMELL: reusing a variable from an earlier context just to save declaring a new one.
             // CODE SMELL: variable names that do not indicate their role in the context.
 
+            // todo: x++
+            // todo: string concatenation
 
 
             // x was declared in this scope. Once we leave this scope, x ceases to exist. The same goes for 
