@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ProjectStructure.Model;
 using ProjectStructure.Storage;
 
@@ -8,38 +9,55 @@ namespace ProjectStructure
     {
         public static void Main(string[] args)
         {
-            Person me = new Person()
+            var cinemaProgram = new MovieList();
+
+            var director = new Person()
             {
-                Name = "Kristian Videmark Parkov",
-                Birthday = new DateTime(1980, 8, 9),
-                Address = new Address()
-                {
-                    Street = "Tranevej",
-                    Number = 15,
-                    ZipCode = "2400",
-                    Country = "Denmark"
-                }
+                Name = "Denis Villeneuve"
             };
 
-            Person president = new Person()
+            var leadRole = new Person()
             {
-                Name = "Donald Trump",
-                Birthday = new DateTime(1946, 6, 14),
-                Address = new Address()
-                {
-                    Street = "Pennsylvania Ave NW",
-                    Number = 1600,
-                    ZipCode = "DC 20500",
-                    Country = "USA"
-                }
+                Name = "Ryan Gosling"
             };
 
-            var storage = new PeopleStore();
+            var movie = new Movie()
+            {
+                Title = "Blade Runner 2049",
+                Director = director,
+                CentralCast = new List<Person>() { leadRole },
+                Year = 2017,
+                PgRating = PgRating.R,
+                Runtime = 164,
+                TicketPrice = 120
+            };
 
-            storage.AddPerson(me);
-            storage.AddPerson(president);
+            cinemaProgram.Add(movie);
 
-            storage.PrintSummary();
+            cinemaProgram.Add(new Movie()
+            {
+                Title = "As good as it gets",
+                Director = new Person()
+                {
+                    Name = "James L. Brooks"
+                },
+                CentralCast = new List<Person>()
+                {
+                    new Person() { Name = "Jack Nicholson" },
+                    new Person() { Name = "Helen Hunt" },
+                },
+                Year = 1997,
+                PgRating = PgRating.PG13,
+                Runtime = 139,
+                TicketPrice = 90
+            });
+
+            Console.WriteLine($"The movie list contains {cinemaProgram.Count()} movies: ");
+            Console.WriteLine($"-------------------------------------------------------");
+            Console.WriteLine("");
+
+            cinemaProgram.PrintList();
+
             Console.ReadKey();
         }
     }
