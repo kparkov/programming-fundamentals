@@ -9,6 +9,7 @@ namespace Variables
             RunBasicVariablesExample();
             // RunInferenceExample();
             // RunMathOperatorsExample();
+            // RunBooleanOperatorsExample();
             // RunUpdateExample();
             // RunExercises();
             // RunExtendedExercises();
