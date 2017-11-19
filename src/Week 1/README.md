@@ -27,6 +27,16 @@
 ### Editor, projektstruktur og syntaks (20 min)
 
 - Solution og projekt: Visual Studios organisation af kode.
+- Udsagn: koden udgøres af en række udsagn (statement), der afsluttes med semikolon eller starter en blok (se nedenfor). C# er ikke _whitespace sensitive_, så indryk mv har ingen betydning for korrektheden.
+```csharp
+<udsagn>;
+
+<udsagn> 
+{
+
+}
+```
+
 - Strukturen i filerne: `Namespace -> Class -> Method -> Logic`
 ```csharp
 using System;
@@ -44,16 +54,6 @@ namespace HelloWorld
 ```
 
 - `static void Main(string[] args)`: stedet, hvor et program starter.
-- Udsagn: koden udgøres af en række udsagn (statement), der afsluttes med semikolon eller starter en blok (se nedenfor). C# er ikke _whitespace sensitive_, så indryk mv har ingen betydning for korrektheden.
-```csharp
-<udsagn>;
-
-<udsagn> 
-{
-
-}
-```
-
 - Kodeblok: Et sæt af tuborgklammer `{...}` definerer et _scope_ eller en _kodeblok_ - en markering af, hvor meget den førkommende instruktion omfatter, og samtidig et privat rum for variabler.
 
 ```csharp
