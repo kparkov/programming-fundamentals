@@ -106,4 +106,6 @@ x = y + z;
 
 - Github: hvordan I kan gemme løsningen på jeres øvelser til senere.
 - Repetitionsøvelser. I kan løse dem nu eller til næste gang.
-- Førstehåndsindtryk: er formen i orden?
+- Førstehåndsindtryk
+  - Fungerer formen?
+  - Er 2 timer passende? Skal vi eventuelt skrue op eller ned?
