@@ -26,7 +26,7 @@
 
 ### Editor, projektstruktur og syntaks (20 min)
 
-- Solution og projekt: Visual Studios organisation af kode.
+- Visual Studio: de dele, vi skal bruge nu og her (editor og solution explorer).
 - Udsagn: koden udgøres af en række udsagn (statement), der afsluttes med semikolon eller starter en blok (se nedenfor). C# er ikke _whitespace sensitive_, så indryk mv har ingen betydning for korrektheden.
 ```csharp
 <udsagn>;
