@@ -1,11 +1,15 @@
 # Grundlæggende programmering i C#
 
-Kurset er et grundlæggende kursus i grundlæggende programmering med valg af sproget C# (udtales "*C sharp*"). Sproget er valgt fordi:
+Et grundlæggende kursus i grundlæggende programmering med valg af sproget C# (udtales "*C sharp*"). Sproget er valgt fordi:
 
 - Klassisk i opbygning: det er et meget stringent og eksemplarisk sprog, der lægger sig tæt op ad Java, og er derfor også rimelig tilgængeligt.
 - Moderne og opdateret: det følger med tiden, og der er stor efterspørgsel efter programmører, der kan kode i C#.
 - All purpose: det benyttes i alle domæner, fra finansielle systemer, over web til spil.
 - Gratis: udviklingsværktøjerne er gratis, og sproget er open source.
+
+## Program
+
+- [Uge 1](src/Week%201/README.md)
 
 ## Hvad kigger jeg på?
 
