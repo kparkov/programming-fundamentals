@@ -9,6 +9,7 @@
   - Overbliksprægede introduktioner (~30-40%)
   - Masser af øvelser (~60-70%)
   - Afbryd og stil spørgsmål **løbende** - vent **ikke** til sidst.
+  - Mind mig om pauser - gerne hyppige, kortere pauser.
 - Læringskurven
 - Status på udviklingsmiljø
 
@@ -18,7 +19,7 @@
 - Git og Github: en minimal survival guide.
 - Hver gruppe gemmer deres øvelser i en separat _branch_.
 
-## Programmeringen begynder
+## Programmerings-stoffet begynder
 
 ### Editor, projektstruktur og syntaks (20 min)
 
