@@ -1,6 +1,8 @@
 # Uge 1
 
-## Introduktion (20 min)
+## Før vi begynder
+
+### Introduktion (20 min)
 
 - Målsætning
 - Præsentationsrunde
@@ -13,12 +15,11 @@
 - Læringskurven
 - Status på udviklingsmiljø
 
-## Github (20 min)
+### Github (10 min)
 
-- Brugernavne: alle skriver deres Github-brugernavne på den lukkede gruppe på FB, så I kan få skriveadgang.
-- Git og Github: en minimal survival guide.
-  - **Commit**: når vi har lavet ændringer i koden, kan vi _committe_ dem. Det er ligesom at gemme spillet. Vi kan altid komme tilbage til dette punkt.
-- Hver gruppe gemmer deres øvelser i en separat _branch_.
+- Hvad er git og Github?
+- Updates
+- Discard changes
 
 ## Programmerings-stoffet begynder
 
@@ -42,7 +43,7 @@ namespace HelloWorld
 ```
 
 - `static void Main(string[] args)`: stedet, hvor et program starter.
-- Scope: Et sæt af tuborgklammer `{...}` definerer et _scope_ - en markering af, hvor meget den førkommende instruktion omfatter, og samtidig et privat rum for variabler.
+- Scope: Et sæt af tuborgklammer `{...}` definerer et _scope_ eller en _kodeblok_ - en markering af, hvor meget den førkommende instruktion omfatter, og samtidig et privat rum for variabler.
 
 ```csharp
 static void Main(string[] args) 
@@ -56,12 +57,13 @@ static void Main(string[] args)
 - Execution flow: Vi kører fra toppen og ned, indtil vi støder på et punkt, der flytter os til en underordnet del af koden. Så kører denne færdig, hvorefter vi vender tilbage til det sted vi slap. Når vi er ved bunden af `Main`, stopper programmet.
 - Meget kort C# som et _stærkt og statisk typet, klassisk, imperativt, objekt-orienteret programmeringssprog_.
 
-
 ### Variabler (50 min)
 
-I det imperative programmeringsparadigme anskuer vi programmet og maskinen som en tilstand, der ved applicering af en transformativ logik bringes i en ny tilstand. Atomet for denne tilstand er variablen.
+I det imperative programmeringsparadigme anskuer vi programmet og maskinen som en tilstand, der ved applicering af en transformativ logik bringes i en ny tilstand. Tilstandens atom er variablen.
 
-En variabel er en navngivet kasse i hukommelsen, hvor vi kan gemme en værdi til senere brug og manipulation.
+`tilstand A -> handling -> tilstand B -> handling -> tilstand C`
+
+En variabel er en navngivet kasse i hukommelsen, hvor vi kan gemme en værdi til senere brug og manipulation. Vi anvender navnet for at referere til den indeholdte værdi.
 
 - En variabel _erklæres_ (declaration) altid med en type og et navn.
 ```csharp
