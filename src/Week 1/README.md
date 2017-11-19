@@ -17,6 +17,7 @@
 
 - Brugernavne: alle skriver deres Github-brugernavne på den lukkede gruppe på FB, så I kan få skriveadgang.
 - Git og Github: en minimal survival guide.
+  - **Commit**: når vi har lavet ændringer i koden, kan vi _committe_ dem. Det er ligesom at gemme spillet. Vi kan altid komme tilbage til dette punkt.
 - Hver gruppe gemmer deres øvelser i en separat _branch_.
 
 ## Programmerings-stoffet begynder
@@ -24,8 +25,7 @@
 ### Editor, projektstruktur og syntaks (20 min)
 
 - Solution og projekt: Visual Studios organisation af kode.
-- Logik og erklæring: 
-- `Namespace -> Class -> Method -> Logic`
+- Strukturen i filerne: `Namespace -> Class -> Method -> Logic`
 ```csharp
 using System;
 
@@ -54,6 +54,7 @@ static void Main(string[] args)
 }
 ```
 - Execution flow: Vi kører fra toppen og ned, indtil vi støder på et punkt, der flytter os til en underordnet del af koden. Så kører denne færdig, hvorefter vi vender tilbage til det sted vi slap. Når vi er ved bunden af `Main`, stopper programmet.
+- Meget kort C# som et _stærkt og statisk typet, klassisk, imperativt, objekt-orienteret programmeringssprog_.
 
 
 ### Variabler (50 min)
@@ -98,7 +99,8 @@ int z = 10;
 x = y + z;
 ```
 
-### Afrunding
+### Afrunding (10 min)
 
+- Github: hvordan I kan gemme løsningen på jeres øvelser til senere.
 - Repetitionsøvelser. I kan løse dem nu eller til næste gang.
 - Førstehåndsindtryk: er formen i orden?
