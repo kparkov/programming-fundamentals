@@ -34,7 +34,7 @@ else
 
 ## Arrays og loops (45 min)
 
-Arrays eller _lists_ er en liste af en type gemt under et enkelt navn, og er et helt essentielt værktøj til at arbejde med struktureret data.
+Arrays eller _lists_ er en liste af en type gemt under et enkelt navn, og er et helt essentielt værktøj til at arbejde med data på en struktureret måde.
 
 Den naturlige forlængelse af denne konstruktion er en løkke (loop), hvor vi for hvert element _besøger_ elementet med den samme kodestump.
 
