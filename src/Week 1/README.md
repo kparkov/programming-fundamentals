@@ -12,6 +12,7 @@
   - Masser af øvelser (~60-70%)
   - Afbryd og stil spørgsmål **løbende** - vent **ikke** til sidst.
   - Mind mig om pauser - gerne hyppige, kortere pauser.
+  - Biografen som gennemgående eksempel for forretningsdomæne.
 - Læringskurven
 - Status på udviklingsmiljø
 

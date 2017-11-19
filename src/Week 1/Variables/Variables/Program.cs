@@ -6,9 +6,9 @@ namespace Variables
     {
         public static void Main(string[] args)
         {
-            // RunBasicVariablesExample();
+            RunBasicVariablesExample();
             // RunInferenceExample();
-            RunMathOperatorsExample();
+            // RunMathOperatorsExample();
             // RunUpdateExample();
             // RunExercise();
 

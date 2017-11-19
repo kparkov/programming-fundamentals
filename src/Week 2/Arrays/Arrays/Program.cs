@@ -7,8 +7,8 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            // RunListExample();
-            RunForEachExample();
+            RunListExample();
+            // RunForEachExample();
             Console.ReadKey();
         }
 
