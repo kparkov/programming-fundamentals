@@ -324,21 +324,5 @@ namespace Variables
             // Output the value of the expected revenue again (below this line).
             // Is the behaviour / result what you expected?
         }
-
-        private static void RunExtendedExercises()
-        {
-            // EXERCISE: SLIGHTLY MORE ADVANCED EXAMPLES
-
-            double fahrenheit = 98.6;
-            double celsius = 0;
-
-            // Update the 'celsius' variable to an expression that converts from the fahrenheit variable.
-            // The celsius variable should remain correct if you change the fahrenheit value above.
-            // Extra points for keeping the relation / fractions clear in the expression.
-
-            Console.WriteLine($"His temperature was {fahrenheit}F / {celsius}C");
-
-
-        }
     }
 }
