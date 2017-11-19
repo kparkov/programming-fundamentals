@@ -10,7 +10,8 @@ namespace Variables
             // RunInferenceExample();
             // RunMathOperatorsExample();
             // RunUpdateExample();
-            // RunExercise();
+            // RunExercises();
+            // RunExtendedExercises();
 
             Console.ReadKey();
         }
@@ -60,6 +61,22 @@ namespace Variables
             string summary = "There are " + peopleInParliament + " people in parliament.";
 
             Console.WriteLine(summary);
+
+            // EXERCISE: BASIC VARIABLE DECLARATION
+
+            // Declare a variable that contains your name.
+            // Declare a variable with your birthyear.
+            // Declare a variable with your town of birth.
+            // Declare a variable that presents yourself, referencing the variable above: "Hi, my name is (my name), I was born ... in ...".
+            // Think about how you name the variables.
+            // Write the presentation to the Console.
+
+            int currentYear = DateTime.Now.Year;
+
+            // The above variable holds the present year.
+            // You have either had a birthday this year or not, which means you could be two different years of age right now.
+            // Declare a variable for the max and min amount of years you could be, and let each be an expression referencing the
+            // variables above.
         }
 
         private static void RunInferenceExample()
@@ -82,7 +99,7 @@ namespace Variables
 
         private static void RunMathOperatorsExample()
         {
-            double x;
+            decimal x;
 
             // PLUS
             x = 10 + 5;
@@ -123,6 +140,74 @@ namespace Variables
             x %= 4;
 
             Console.WriteLine("10 % 4 = " + x);
+
+            // PARENTHESIS AND PRECEDENCE AS USUAL
+
+            x = 10 + 4 * 2;
+            Console.WriteLine("10 + 4 * 2 = " + x);
+
+            x = (10 + 4) * 2;
+            Console.WriteLine("(10 + 4) * 2 = " + x);
+
+            // EXERCISE: MATH OPERATORS
+
+            // Declare a variable representing each of the steps in the following story, when it makes sense. Make sure you think about the type
+            // and name of each declared variable. Let the assigned value be a literal value or an expression referring the earlier
+            // variables, depending on what makes sense. Retain as much information as possible in the expression to make it easier to read.
+
+            // There is a group of 7 kids.
+
+            // Two of them have 20 kroner, three have 45 kroner, one has 13.75 kroner, and the last one has 4.50 kroner.
+            // Generously of some, they decide to pool all of their money together. What is the sum?
+
+            // A donut costs 15 kroner. They decide to buy as many donuts as they can for the sum. 
+            // Given that no baker is willing to sell half a donut, how many whole donuts can they buy? (careful: this is tricky!)
+
+            // They then decide to divide the donuts equally, potentially slicing individual donuts into smaller bits. 
+            // How many do each kid get?
+
+            // What amount of money do they have left after buying the donuts?
+        }
+
+        private static void RunBooleanOperatorsExample()
+        {
+            int age = 16;
+            decimal money = 20;
+
+            bool isChild = age < 18;
+            bool isAdult = !isChild;
+            bool isRetirementAge = age >= 65;
+            bool isWorkingAge = isAdult && !isRetirementAge;
+
+            bool getsDiscountInTheBus = isChild || isRetirementAge;
+            bool getsDiscountInTheBus2 = age < 18 || age >= 65;
+
+            bool isTwenty = age == 20;
+            bool isDifferentFromTwenty = age != 20;
+
+            decimal ticketPrice = 25;
+            decimal reducedTicketPrice = 15;
+
+            bool canRideTheBus = money >= ticketPrice || (getsDiscountInTheBus && money >= reducedTicketPrice);
+
+            // EXERCISE: 
+
+            int customerAge = 12;
+            int customerHeight = 152;
+            int customerWeight = 49;
+
+            // The three variables above are the metrics of a customer.
+            // Write tests for the following fictitious Tivoli entry requirements:
+
+            // To try Grøften, you must be at least 3 years old and weigh between 5 and 600 kg.
+            bool canTryGrøften = customerAge >= 3 && customerWeight >= 5 && customerWeight <= 600;
+
+            // To try Mariehønen, you must be at least 5 years old.
+            // To try Veteranbilerne, you must be at least 1 year old and at least 60 cm tall.
+            // To try Ballongyngerne, you must be at least 80 cm tall and must not weigh more than 170 kg.
+            // To try Rutsjebanen, you must not be more than 210 cm or weigh more than 190 kg.
+            // To try Dæmonen, you must be at least 16 years old and less than 80 years old - but no matter what you cannot be taller than 210 or weigh more than 150
+            // To try Kaoshuset, you cannot be exactly 100 years old, and you must either weigh between 40 and 60 or between 90 and 110.
         }
 
         private static void RunUpdateExample()
@@ -208,7 +293,7 @@ namespace Variables
             // y and z.
         }
 
-        private static void RunExercise()
+        private static void RunExercises()
         {
             // EXERCISE: WORKING WITH VARIABLES
             // The actual values of the variables in these exercises are not important, although doing realistic estimates will
@@ -216,12 +301,6 @@ namespace Variables
             // between variables and how you output it.
 
             // PART 1
-            // Declare a variable that contains your name.
-            // Declare a variable that presents yourself, referencing the variable above: "Hi, my name is (my name)".
-            // Think about how you name the variables.
-            // Write the presentation to the Console.
-
-            // PART 2
             // Declare a variable with the name of a movie you want to see at the cinema.
             // Declare a variable containing whether the movie is a Danish movie.
             // Declare a variable containing the estimated price for the movie ticket.
@@ -230,7 +309,7 @@ namespace Variables
             // Declare a variable containing the total cost of going to see the movie.
             // Write to the console: the name of the movie, whether it is Danish and the total estimated cost of your visit.
 
-            // PART 3
+            // PART 2
             // Let's pretend that your estimates above are an average for everyone in the audience.
             // Declare a variable containing the estimated number of seats in the movie theater showing the picture.
             // Declare a variable containing the expected average ratio of seats taken during a screening. (Example: 0.75 = 75% of seats sold on average)
@@ -239,10 +318,26 @@ namespace Variables
             // Declare a variable containing the total revenue of this screening for the cinema.
             // Present the calculation and results in the Console. Put some energy into formatting, so it is easy to read and understand.
 
-            // PART 4
+            // PART 3
             // Update the value of the expected cost for the cinema (not by changing it above, but by re-assigning it below this line).
             // Output the value of the expected revenue again (below this line).
             // Is the behaviour / result what you expected?
+        }
+
+        private static void RunExtendedExercises()
+        {
+            // EXERCISE: SLIGHTLY MORE ADVANCED EXAMPLES
+
+            double fahrenheit = 98.6;
+            double celsius = 0;
+
+            // Update the 'celsius' variable to an expression that converts from the fahrenheit variable.
+            // The celsius variable should remain correct if you change the fahrenheit value above.
+            // Extra points for keeping the relation / fractions clear in the expression.
+
+            Console.WriteLine($"His temperature was {fahrenheit}F / {celsius}C");
+
+
         }
     }
 }

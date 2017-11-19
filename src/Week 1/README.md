@@ -13,7 +13,11 @@
   - Afbryd og stil spørgsmål **løbende** - vent **ikke** til sidst.
   - Mind mig om pauser - gerne hyppige, kortere pauser.
   - Biografen som gennemgående eksempel for forretningsdomæne.
-- Læringskurven
+- Et par staldtips
+  - Læringskurven er ikke behagelig.
+  - Kode er en kreativ disciplin - der er ikke noget facit! Men der er masser af erfaringer.
+  - Logikken tager udgangspunkt i simpel matematik, og i starten er der mange små regnestykker - men i de senere lektioner betyder matematikken meget mindre.
+  - Det er godt at have et projekt.
 - Status på udviklingsmiljø
 
 ### Github (10 min)
@@ -71,6 +75,8 @@ static void Main(string[] args)
 
 ### Variabler (50 min)
 
+Solution: `Variables.sln`
+
 I det imperative programmeringsparadigme anskuer vi programmet og maskinen som en tilstand, der ved applicering af en transformativ logik bringes i en ny tilstand. Tilstandens atom er variablen.
 
 `tilstand A -> handling -> tilstand B -> handling -> tilstand C`
@@ -88,11 +94,22 @@ int x = 7;
 int y = 10 + 8;
 ```
 
-- Et udtryk er en kombination af værdier, variabler og operatorer, der kan evalueres til en enkelt værdi.
+- Et udtryk er en kombination af værdier, variabler og operatorer, der kan evalueres til en enkelt værdi. I det følgende vises et aritmetisk udtryk:
 ```csharp
 double pi = 3.1415;
 double radius = 7;
 double circumference = 2 * radius * pi;
+```
+
+- Men et udtryk kan også være boolsk, hvis der anvendes en boolsk operator. Et boolsk udtryk ender altid med at være sandt eller falsk. Det kaldes ofte også en _test_.
+```csharp
+int age = 42;
+
+bool isChild = age < 18;
+bool isReadyForRetirement = age >= 65;
+bool isExactlyTwenty = age == 20;
+bool isTeenager = age >= 13 && age < 20;
+bool isChildOrReadyForRetirement = age < 18 || age >= 65;
 ```
 
 - Der er et udvalg af primitive typer, hvoraf vi fokuserer på `string` (tekst), `int` (heltal), `bool` (sandt/falsk), `double` (decimaltal med flydende decimaler) og `decimal` (decimaltal med faste decimaler).
