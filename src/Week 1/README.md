@@ -73,7 +73,7 @@ static void Main(string[] args)
 - Execution flow: Vi kører fra toppen og ned, indtil vi støder på et punkt, der flytter os til en underordnet del af koden. Så kører denne færdig, hvorefter vi vender tilbage til det sted vi slap. Når vi er ved bunden af `Main`, stopper programmet.
 - Meget kort C# som et _stærkt og statisk typet, klassisk, imperativt, objekt-orienteret programmeringssprog_.
 
-### Variabler (50 min)
+### Variabler (70 min)
 
 Solution: `Variables.sln`
 
