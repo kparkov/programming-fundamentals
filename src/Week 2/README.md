@@ -8,7 +8,7 @@ Før vi kan komme i gang, er vi nødt til at tale om _boolean expressions_ (bool
 
 Herefter kigger vi på to af de basale kontrolstrukturer, `if`/`else` og `while`.
 
-## Gruppernes eget rum på Github (15 min)
+## Gruppernes eget rum på Github
 
 Vi introducerer til en lidt mere solid måde, hvorpå de enkelte grupper kan beholde deres egen kode, mens det samtidig er muligt at opdatere fælleskoden.
 
@@ -17,7 +17,7 @@ Vi introducerer til en lidt mere solid måde, hvorpå de enkelte grupper kan beh
 - Commit
 - Push
 
-## Boolean expressions (30 min)
+## Boolean expressions
 
 Når vi anvender relationelle operatorer i et udtryk, bliver udtrykket bool'sk. Det betyder, at resultatet af udtrykket altid bliver `true` eller `false`. Det svarer til et spørgsmål, der starter med "Er". I det følgende spørger vi: "Er alder mindre end 18?" Svaret er naturligt enten sandt eller falsk.
 
@@ -113,7 +113,7 @@ int age = 20;
 bool isAdult = !(age < 18);
 ```
 
-## If / else (30 min)
+## If / else
 
 Boolean expressions er centrale i programmering, fordi de benyttes i mange _control structures_, hvoraf den mest basale er `if`/`else`.
 
@@ -177,7 +177,7 @@ else
 }
 ```
 
-## While (20 min)
+## While
 
 En anden meget central kontrolstruktur i programmering er en _loop_ (løkke), der kører den samme kodeblok flere gange.
 
@@ -185,7 +185,6 @@ Den mest basale form for loop er `while`, der benytter en boolean expression. S�
 
 ```csharp
 int counter = 0;
-bool tooYoung = false;
 
 while (counter < 5) 
 {
