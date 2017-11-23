@@ -1,0 +1,33 @@
+# Indhold
+
+- Variables
+  - [declaration and assignment](Week%201/README.md#variabler-70-min)
+  - [types](Week%201/README.md#variabler-70-min)
+    - `int`: whole numbers that cannot have decimals, such as `8`.
+    - `bool`: either `true` or `false`.
+    - `string`: text, such as `"this is a text"`.
+    - `double`: scientific floating point number, such as `3.1415`.
+    - `decimal`: financial decimal number, such as `99.95m`.
+- Expressions
+  - [expressions during assignment](Week%201/README.md#variabler-70-min)
+  - math expressions
+  - Boolean expressions
+    - Relational operators
+      - `>`: greater than
+      - `<`: less than
+      - `>=`: greater than or equal to
+      - `<=`: less than or equal to 
+      - `==`: equal to
+      - `!=`: not equal to / different from
+    - Logical operators
+      - `&&`: and
+      - `||`: or
+      - `!`: not
+- Control structures
+  - Branching
+	  - `if / else if / else`: if true, do this, else do that
+    - `switch`: based on value, select the correct option
+  - Loops
+    - `while`: while true, keep doing this
+    - `for`: do this **x** times
+    - `foreach`: for 
