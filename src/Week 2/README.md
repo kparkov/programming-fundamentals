@@ -1,6 +1,6 @@
 # Uge 2: control structures
 
-I denne uge slipper vi matematikken, og dykker ned i programmeringens hjerte. Et program kan reagere på forskellige måder på forskellige inputs, og det er det, der giver os illusionen af, at computeren har intelligens.
+I denne uge slipper vi matematikken, og dykker ned i programmeringens hjerte. Et program kan reagere på forskellige måder på forskellige inputs, og det er det, der kan give os opfattelsen af en intelligent respons.
 
 De strukturer, der giver os mulighed for at tage forskellige beslutninger, kaldes _control structures_ (kontrolstrukturer).
 
@@ -17,6 +17,16 @@ Herefter kigger vi på to af de basale kontrolstrukturer, `if`/`else` og `while`
 
 ## Boolean expressions
 
+Boolean expressions bruges til at vurdere, om en bestemt betingelse er opfyldt. Når vi ved, om betingelsen er opfyldt, ved vi hvilken vej vi skal fortsætte i programmet.
+
+Vi kan spørge, om to værdier er _lig hinanden_, _forskellige fra hinanden_, om det _første er større end det andet_, osv. Dette kaldes de **relationelle operatorer**. 
+
+Vi kan også sammensætte flere af denne type tests ved hjælp af de logiske operatorer (AND, OR og NOT).
+
+Vi konstruerer en boolean expression ved at benytte en boolean operator. Resultatet af en boolean expression er altid `true` eller `false`.
+
+### Relationelle operatorer
+
 Når vi anvender relationelle operatorer i et udtryk, bliver udtrykket bool'sk. Det betyder, at resultatet af udtrykket altid bliver `true` eller `false`. Boolean expressions kaldes også _conditions_ eller _tests_, lidt afhængig af konteksten.
 
 Det svarer til et spørgsmål, der starter med "Er". I det følgende spørger vi: "Er alder mindre end 18?" Svaret er naturligt enten sandt eller falsk.
@@ -29,8 +39,6 @@ bool isChild = age < 18;
 ```
 
 I det ovenstående eksempel vil `isChild` blive `false`.
-
-### Relationelle operatorer
 
 De relationelle operatorer er:
 
@@ -155,7 +163,7 @@ if (age >= 18)
 }
 else
 {
-    // This code block gets executed if age was not 18 or higher.
+    // This code block gets executed if the first block did not.
     Console.WriteLine("Smut, pomfrit.");
 }
 
@@ -164,26 +172,45 @@ else
 
 ### If - Else if - Else
 
-Endelig kan vi lave en længere række af betingelser og blokke, hvor vi kun evaluerer den næste blok, hvis den forrige betingelse ikke blev opfyldt. Vi benytter her konstruktionen `else if`.
+Når programmet forgrener sig, er det ikke altid tilstrækkeligt med to grene. Nogle gange er der flere mulige udfald.
+
+`if/else`-konstruktionen kan udvides til at gennemløbe en serie af tests, hvoraf der kun kan være et positivt udfald. Til dette bruger vi `else if` blokke, der ligger imellem `if` og `else`.
+
+Der er ved at blive åbnet op for, at man kan begynde at tage kørekort som 17-årig, men man må ikke køre alene før man er fyldt 18. Dette udmunder i tre scenarier:
 
 ```csharp
 int age = 17;
 
+bool canTakeDriversLicense;
+bool canDriveAlone;
+
 if (age >= 18)
 {
     // Will run if age is 18 or higher.
-    Console.WriteLine("Velkommen!");
+    Console.WriteLine("Du kan tage kørekort.");
+
+    canTakeDriversLicense = true;
+    canDriveAlone = true;
 }
 else if (age == 17)
 {
-    // Will only run if the first was false, and if age is 17.
-    Console.WriteLine("Ikke denne gang, men kig ind igen om et års tid.");
+    // Will only run if the first did not, and if age is 17.
+    Console.WriteLine("Du kan begynde at tage kørekort, men må ikke køre alene endnu.");
+
+    canTakeDriversLicense = true;
+    canDriveAlone = false;
 }
 else
 {
-    Console.WriteLine("Du er ikke gammel nok.");
+    // Will run only if no other block ran
+    Console.WriteLine("Du må vente.");
+
+    canTakeDriversLicense = false;
+    canDriveAlone = false;
 }
 ```
+
+Bemærk, at det kun er den første blok med positiv betingelse, der kører, selvom en senere blok også ville producere en positiv betingelse.
 
 ### Øvelse: _detaljer følger_
 
