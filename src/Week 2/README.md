@@ -1,5 +1,9 @@
 # Uge 2: control structures
 
+> "I believe myself to possess a most singular combination of qualities exactly fitted to make me pre-eminently a discoverer of the hidden realities of nature."  
+>
+> Ada Lovelace (1815 - 1852), verdens første programmør 
+
 I denne uge slipper vi matematikken, og dykker ned i programmeringens hjerte. Et program kan reagere på forskellige måder på forskellige inputs, og det er det, der kan give os opfattelsen af en intelligent respons.
 
 De strukturer, der giver os mulighed for at tage forskellige beslutninger, kaldes _control structures_ (kontrolstrukturer).
@@ -17,11 +21,11 @@ Herefter kigger vi på to af de basale kontrolstrukturer, `if`/`else` og `while`
 
 ## Boolean expressions
 
-Boolean expressions bruges til at vurdere, om en bestemt betingelse er opfyldt. Når vi ved, om betingelsen er opfyldt, ved vi hvilken vej vi skal fortsætte i programmet.
+Boolean expressions bruges til at vurdere, om en bestemt betingelse er opfyldt. Når vi ved, om betingelsen er opfyldt, ved vi om vi skal fortsætte ad den ene eller den anden vej.
 
 Vi kan spørge, om to værdier er _lig hinanden_, _forskellige fra hinanden_, om det _første er større end det andet_, osv. Dette kaldes de **relationelle operatorer**. 
 
-Vi kan også sammensætte flere af denne type tests ved hjælp af de logiske operatorer (AND, OR og NOT).
+Vi kan også sammensætte flere af denne type tests ved hjælp af **de logiske operatorer** (AND, OR og NOT).
 
 Vi konstruerer en boolean expression ved at benytte en boolean operator. Resultatet af en boolean expression er altid `true` eller `false`.
 
@@ -51,7 +55,9 @@ De relationelle operatorer er:
 
 ### Datatyper og boolean expressions
 
-I det ovenstående eksempel var både `age` og den sammenlignede værdi af typen `int`, og det er umiddelbart intuitivt, at et tal kan være højere, lavere eller lig med et andet tal. Men faktisk kan mange datatyper være genstand for sammenligning med boolean expressions. Måden de sammenlignes afhænger af typen. Fx vil to variabler af typen `string` blive sammenlignet ud fra alfabetisk sortering: `"A"` er lavere end `"B"`, osv.
+I det ovenstående eksempel var både `age` og den sammenlignede værdi af typen `int`, og det er umiddelbart intuitivt, at et tal kan være højere, lavere eller lig med et andet tal. 
+
+Men faktisk kan mange datatyper være genstand for sammenligning med boolean expressions. Måden de sammenlignes afhænger af typen. Fx vil to variabler af typen `string` blive sammenlignet ud fra alfabetisk (leksikografisk) sortering: `"A"` er lavere end `"B"`, osv.
 
 Der er dog ingen garanti for, at en sammenligning kan lade sig gøre. Fx er udtrykket `true > "hej"` meningsløst, eller i hvert fald uforudsigeligt.
 
@@ -210,13 +216,13 @@ else
 }
 ```
 
-Bemærk, at det kun er den første blok med positiv betingelse, der kører, selvom en senere blok også ville producere en positiv betingelse.
+Bemærk, at det kun er den første blok med positiv betingelse, der kører, selvom en senere blok også ville producere en positiv betingelse. _Rækkefølgen_ af de enkelte led i `if`/`else if`/`else` bliver dermed vigtig.
 
 ### Øvelse: _detaljer følger_
 
 ## While
 
-En anden meget central kontrolstruktur i programmering er en _loop_ (løkke), der kører den samme kodeblok flere gange.
+En anden meget central kontrolstruktur i programmering er en _loop_ (løkke), der gentager den samme kodeblok, så længe det er nødvendigt.
 
 Den mest basale form for loop er `while`, der benytter en boolean expression. Så længe denne expression er `true`, vil løkken køre igen.
 
