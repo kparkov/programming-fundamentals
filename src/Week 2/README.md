@@ -8,18 +8,18 @@ Før vi kan komme i gang, er vi nødt til at tale om _boolean expressions_ (bool
 
 Herefter kigger vi på to af de basale kontrolstrukturer, `if`/`else` og `while`.
 
-## Gruppernes eget rum på Github
+## Indhold
 
-Vi introducerer til en lidt mere solid måde, hvorpå de enkelte grupper kan beholde deres egen kode, mens det samtidig er muligt at opdatere fælleskoden.
-
-- Brugernavne: alle skriver deres Github-brugernavne på den lukkede gruppe på FB, så I kan få skriveadgang.
-- Branches og _"update from default branch"_.
-- Commit
-- Push
+- [Boolean expressions](#boolean-expressions)
+- [if / else](#if--else)
+- [while](#while)
+- [Afsluttende øvelse: gæt et tal mellem 1 og 100]()
 
 ## Boolean expressions
 
-Når vi anvender relationelle operatorer i et udtryk, bliver udtrykket bool'sk. Det betyder, at resultatet af udtrykket altid bliver `true` eller `false`. Det svarer til et spørgsmål, der starter med "Er". I det følgende spørger vi: "Er alder mindre end 18?" Svaret er naturligt enten sandt eller falsk.
+Når vi anvender relationelle operatorer i et udtryk, bliver udtrykket bool'sk. Det betyder, at resultatet af udtrykket altid bliver `true` eller `false`. Boolean expressions kaldes også _conditions_ eller _tests_, lidt afhængig af konteksten.
+
+Det svarer til et spørgsmål, der starter med "Er". I det følgende spørger vi: "Er alder mindre end 18?" Svaret er naturligt enten sandt eller falsk.
 
 ```csharp
 int age = 20;
@@ -27,6 +27,8 @@ int age = 20;
 // Let 'isChild' be a bool that equals whether age is less than 18
 bool isChild = age < 18;
 ```
+
+I det ovenstående eksempel vil `isChild` blive `false`.
 
 ### Relationelle operatorer
 
@@ -39,9 +41,15 @@ De relationelle operatorer er:
 - `age == value`: sandt, hvis `age` er præcis lig med `value`.
 - `age != value`: sandt, hvis `age` ikke er lig med `value`.
 
+### Datatyper og boolean expressions
+
+I det ovenstående eksempel var både `age` og den sammenlignede værdi af typen `int`, og det er umiddelbart intuitivt, at et tal kan være højere, lavere eller lig med et andet tal. Men faktisk kan mange datatyper være genstand for sammenligning med boolean expressions. Måden de sammenlignes afhænger af typen. Fx vil to variabler af typen `string` blive sammenlignet ud fra alfabetisk sortering: `"A"` er lavere end `"B"`, osv.
+
+Der er dog ingen garanti for, at en sammenligning kan lade sig gøre. Fx er udtrykket `true > "hej"` meningsløst, eller i hvert fald uforudsigeligt.
+
 ### AND (`&&`)
 
-Herudover kan vi med den logiske operator `&&` (AND) sammenstille to boolske udtryk for at sige, at to forskellige betingelser skal være opfyldt samtidig. Hvis ét af de to udsagn er `false`, vil hele udsagnet blive `false`. Dette kaldes også en _conjunction_ (konjunktion):
+Vi kan med den logiske operator `&&` (AND) sammenstille to boolske udtryk for at sige, at to forskellige betingelser skal være opfyldt samtidig. Hvis ét af de to udsagn er `false`, vil hele udsagnet blive `false`. Dette kaldes også en _conjunction_ (konjunktion):
 
 ```csharp
 int age = 20;
@@ -54,7 +62,7 @@ decimal beerPrice = 50m;
 bool canBuyBeer = age >= alcoholMinimumAge && money >= beerPrice;
 ```
 
-Programmet vil evaluere udsagnet således:
+Det følgende er ikke kode, men et forsøg på at beskrive, hvordan programmet reducerer udsagnet for at finde den endelige værdi:
 
 ```csharp
 bool canBuyBeer = age >= alcoholMinimumAge && money >= beerPrice;
@@ -72,7 +80,7 @@ bool canBuyBeer = age >= alcoholMinimumAge && money >= beerPrice;
 Vi kan benytte `||` (OR) til at sige, at udsagnet skal blive sandt, hvis mindst én af de to betingelser er sandt. Dette kaldes også en _disjunction_ (disjunktion):
 
 ```csharp
-// In the bus, there are a price reduction for children and retired people.
+// In the bus, there is a price reduction for children and retired people.
 int age = 82;
 int childTicketMaxAge = 13;
 int retiredTicketMinAge = 65;
@@ -81,7 +89,7 @@ int retiredTicketMinAge = 65;
 bool getsPriceReduction = age <= childTicketMaxAge || age >= retiredTicketMinAge;
 ```
 
-Programmet vil evaluere udsagnet således:
+Det følgende er ikke kode, men et forsøg på at beskrive, hvordan programmet reducerer udsagnet for at finde den endelige værdi:
 
 ```csharp
 bool getsPriceReduction = age <= childTicketMaxAge || age >= retiredTicketMinAge;
@@ -177,6 +185,8 @@ else
 }
 ```
 
+### Øvelse: _detaljer følger_
+
 ## While
 
 En anden meget central kontrolstruktur i programmering er en _loop_ (løkke), der kører den samme kodeblok flere gange.
@@ -210,3 +220,21 @@ SLUT! Tælleren er nu: 5
 Bemærk, at der lægges 1 til `counter` lige før blokkens slutning, så når den får værdien 5, er udtrykket `counter < 5` ikke længere sandt. 
 
 Betingelsen tjekkes altid umiddelbart inden blokken kører igen, så den kører ikke en omgang med værdien 5 i `counter`.
+
+### Øvelse: _detaljer følger_
+
+## Afsluttende øvelse: gæt et tal mellem 1 og 100
+
+Vi skal lave et spil. Computeren tænker på et tilfældigt tal mellem 1 og 100. Spilleren skal gætte tallet.
+
+Spillet bliver ved, så længe tallet ikke er gættet. Når spilleren kommer med et gæt, fortæller computeren, om det næste gæt skal være højere eller lavere.
+
+Spillet slutter, når tallet er gættet. Programmet lykønsker brugeren, når det sker.
+
+**Bonuspoint** hvis man får at vide, hvor mange gæt det krævede, før spillet sluttede.
+
+### Hjælperedskaber
+
+- I har følgende metoder til rådighed, der gør tingene nemmere:
+  - `Computer.ThinkOfNumber()`: denne metode giver os et nyt, tilfældigt tal mellem 1 og 100.
+  - `User.GetGuess()`: denne metode venter på, at brugeren kommer med et nyt gæt.
