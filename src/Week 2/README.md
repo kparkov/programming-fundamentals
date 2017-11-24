@@ -13,7 +13,7 @@ Herefter kigger vi på to af de basale kontrolstrukturer, `if`/`else` og `while`
 - [Boolean expressions](#boolean-expressions)
 - [if / else](#if--else)
 - [while](#while)
-- [Afsluttende øvelse: gæt et tal mellem 1 og 100]()
+- [Afsluttende øvelse: gæt et tal mellem 1 og 100](#afsluttende-øvelse-gæt-et-tal-mellem-1-og-100)
 
 ## Boolean expressions
 
