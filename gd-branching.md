@@ -1,4 +1,4 @@
-# Sådan gemmer du dit arbejde
+# Sådan gemmer du dit arbejde (Github Desktop)
 
 Målet med denne tutorial er, at du skal kunne gemme dit eget arbejde, men samtidig hente mine opdateringer.
 
@@ -17,16 +17,28 @@ Vi opretter den alternative tidslinie, som du kan arbejde på fra nu af. Dette s
 - Tryk på knappen **Current branch**.
 - Tryk på knappen **New**.
 - Navngiv din branch. Brug gerne dit eget navn.
-- Tryk på opdateringsknappen, der nu hedder **Publish branch**.
+- Tryk på synkroniseringsknappen, der nu hedder **Publish branch**.
 
 ## 2. Lav et commit
 
-Når du fremover har ændringer, _committer_ du dem i din egen tidslinie. Dette skal gøres hver gang du har ændringer, som du ønsker at beholde.
+Når du har ændringer, som du ønsker at beholde, _committer_ du dem i din egen tidslinie.
 
 ![commit](res/commit.gif)
 
 - Lav nogle ændringer, som efterfølgende kan ses i **Changes**.
+- Sørg for, at din egen branch er **Current branch**.
 - Sørg for, at alle ændringer har et flueben i Changes-listen.
 - Skriv en titel for ændringerne i **Summary**.
 - Tryk på den blå knap, der er markeret med **Commit to [branch]**.
+- Tryk på synkroniseringsknappen, der nu hedder **Push origin**.
 
+## 3. Hent opdateringer
+
+Når der er centrale ændringer, skal du igennem et ekstra trin.
+
+![update from default](res/update-from-default.gif)
+
+- Sørg for, at du står på din egen branch under **Current branch**.
+- Tryk på synkroniseringsknappen (**Fetch/pull from origin**), der opdaterer _master_-branchen, men ikke din egen.
+- Gå op i menu **Branch > Update from default branch**. Opdateringerne er nu hentet ind i din branch.
+- Tryk på synkroniseringsknappen, så du push'er din egen branch op. Du har nu en opdateret version af din egen branch.
