@@ -45,3 +45,6 @@ Når der er centrale ændringer, skal du igennem et ekstra trin.
 
 ## Bemærkninger
 
+- Sørg altid for, at du står på din egen branch, når du committer (trin 2). Hvis du committer i **master**, opstår der problemer, der kun kan løses af mig.
+- Hvis du ikke får lov til at opdatere, skal du tjekke om der er noget i **Changes**. Man får ikke altid lov til at synkronisere, hvis man har ændringer. Tag stilling til, om det skal gemmes / committes i din egen branch, eller om det skal kasseres.
+- Hvis du har lavet ændringer i de samme linier som mig inden opdatering, vil der opstår en **konflikt**. Konflikter kan være vanskelige at løse rigtigt, men det er harmløst at forsøge at udrede dem selv.
