@@ -149,10 +149,6 @@ bool isRetirementAge = age >= 65;
 bool isWorkingAge = isAdult && !isRetirementAge;
 
 bool getsDiscountInTheBus = isChild || isRetirementAge;
-bool getsDiscountInTheBus2 = age < 18 || age >= 65;
-
-bool isTwenty = age == 20;
-bool isDifferentFromTwenty = age != 20;
 
 decimal ticketPrice = 25;
 decimal reducedTicketPrice = 15;
@@ -302,6 +298,8 @@ Betingelsen tjekkes altid umiddelbart inden blokken kører igen, så den kører 
 ### Øvelse: _detaljer følger_
 
 ## Afsluttende øvelse: gæt et tal mellem 1 og 100
+
+
 
 Vi skal lave et spil. Computeren tænker på et tilfældigt tal mellem 1 og 100. Spilleren skal gætte tallet.
 
