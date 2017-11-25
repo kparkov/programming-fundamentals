@@ -13,6 +13,8 @@ namespace GuessingGame
             // We can get a user guess like this:
             int userGuess = User.GetGuess();
             Console.WriteLine("Brugeren gættede på: " + userGuess);
+
+            Console.WriteLine("Brug while og if/else if/else til at lave det til et gættespil.");
         }
     }
 }

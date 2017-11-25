@@ -27,11 +27,11 @@ Vi kan spørge, om to værdier er _lig hinanden_, _forskellige fra hinanden_, om
 
 Vi kan også sammensætte flere af denne type tests ved hjælp af **de logiske operatorer** (AND, OR og NOT).
 
-Vi konstruerer en boolean expression ved at benytte en boolean operator. Resultatet af en boolean expression er altid `true` eller `false`.
+Boolean expressions kaldes også _conditions_ eller _tests_, lidt afhængig af konteksten, og resultatet af en boolean expression er **altid** en `bool` (`true` eller `false`).
 
 ### Relationelle operatorer
 
-Når vi anvender relationelle operatorer i et udtryk, bliver udtrykket bool'sk. Det betyder, at resultatet af udtrykket altid bliver `true` eller `false`. Boolean expressions kaldes også _conditions_ eller _tests_, lidt afhængig af konteksten.
+De relationelle operatorer sammenligner to værdier for ækvivalens, større end og mindre end.
 
 Det svarer til et spørgsmål, der starter med "Er". I det følgende spørger vi: "Er alder mindre end 18?" Svaret er naturligt enten sandt eller falsk.
 
@@ -42,7 +42,7 @@ int age = 20;
 bool isChild = age < 18;
 ```
 
-I det ovenstående eksempel vil `isChild` blive `false`.
+I det ovenstående eksempel vil `isChild` blive evalueret til `false`.
 
 De relationelle operatorer er:
 
@@ -53,7 +53,7 @@ De relationelle operatorer er:
 - `age == value`: sandt, hvis `age` er præcis lig med `value`.
 - `age != value`: sandt, hvis `age` ikke er lig med `value`.
 
-### Datatyper og boolean expressions
+#### Datatyper og relationelle operatorer
 
 I det ovenstående eksempel var både `age` og den sammenlignede værdi af typen `int`, og det er umiddelbart intuitivt, at et tal kan være højere, lavere eller lig med et andet tal. 
 
@@ -61,7 +61,9 @@ Men faktisk kan mange datatyper være genstand for sammenligning med boolean exp
 
 Der er dog ingen garanti for, at en sammenligning kan lade sig gøre. Fx er udtrykket `true > "hej"` meningsløst, eller i hvert fald uforudsigeligt.
 
-### AND (`&&`)
+### Logiske operatorer (AND, OR og NOT)
+
+#### AND (`&&`)
 
 Vi kan med den logiske operator `&&` (AND) sammenstille to boolske udtryk for at sige, at to forskellige betingelser skal være opfyldt samtidig. Hvis ét af de to udsagn er `false`, vil hele udsagnet blive `false`. Dette kaldes også en _conjunction_ (konjunktion):
 
@@ -89,7 +91,7 @@ bool canBuyBeer = age >= alcoholMinimumAge && money >= beerPrice;
 // No beer for you: you had the right age, but not enough money. :-(
 ```
 
-### OR (`||`)
+#### OR (`||`)
 
 Vi kan benytte `||` (OR) til at sige, at udsagnet skal blive sandt, hvis mindst én af de to betingelser er sandt. Dette kaldes også en _disjunction_ (disjunktion):
 
@@ -116,7 +118,7 @@ bool getsPriceReduction = age <= childTicketMaxAge || age >= retiredTicketMinAge
 // Yay, you can get a price reduction.
 ```
 
-### NOT (`!`)
+#### NOT (`!`)
 
 Endelig kan vi altid vende en boolean på hovedet ved at bruge `!` (NOT) operatoren. Når vi vender den, bliver `true` til `false` og `false` til `true`:
 
@@ -141,7 +143,7 @@ Boolean expressions er centrale i programmering, fordi de benyttes i mange _cont
 
 ### If
 
-`if` starter altid med en boolean expression. Hvis betingelsen evalueres til `true`, kører den første kodeblok, og ellers **springes den over**. Vi siger: "Hvis denne betingelse er opfyldt, skal vi køre den tilhørende kodeblok."
+`if` starter altid med en boolean expression. Hvis betingelsen evalueres til `true`, kører den tilhørende kodeblok, og ellers **springes den over**. Vi siger: "Hvis denne betingelse er opfyldt, skal vi køre den tilhørende kodeblok."
 
 ```csharp
 int age = 21;
