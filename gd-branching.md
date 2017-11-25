@@ -29,3 +29,4 @@ Når du fremover har ændringer, _committer_ du dem i din egen tidslinie. Dette 
 - Sørg for, at alle ændringer har et flueben i Changes-listen.
 - Skriv en titel for ændringerne i **Summary**.
 - Tryk på den blå knap, der er markeret med **Commit to [branch]**.
+
