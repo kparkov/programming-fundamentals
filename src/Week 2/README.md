@@ -137,6 +137,49 @@ int age = 20;
 bool isAdult = !(age < 18);
 ```
 
+### Et længere eksempel
+
+```csharp
+int age = 16;
+decimal money = 20;
+
+bool isChild = age < 18;
+bool isAdult = !isChild;
+bool isRetirementAge = age >= 65;
+bool isWorkingAge = isAdult && !isRetirementAge;
+
+bool getsDiscountInTheBus = isChild || isRetirementAge;
+bool getsDiscountInTheBus2 = age < 18 || age >= 65;
+
+bool isTwenty = age == 20;
+bool isDifferentFromTwenty = age != 20;
+
+decimal ticketPrice = 25;
+decimal reducedTicketPrice = 15;
+
+bool canRideTheBus = money >= ticketPrice || (getsDiscountInTheBus && money >= reducedTicketPrice);
+```
+
+### Øvelse: Adgangskrav i Tivoli
+
+Solution: `BooleanExpressions.sln`
+
+Vi skal skrive en boolean expression for hver af forlystelserne, der evaluerer, om den beskrevne kunde må prøve forlystelsen. Kunden har en alder (`customerAge`), en højde (`customerHeight`) og en vægt (`customerWeight`).
+
+Hver af forlystelserne har et adgangskrav, der er beskrevet i kommentarerne.
+
+Fx:
+
+```csharp
+// To try Grøften, you must be at least 3 years old and weigh between 5 and 600 kg.
+```
+
+En gyldig besvarelse på ovenstående ville være:
+
+```csharp
+bool canTryGrøften = customerAge >= 3 && customerWeight >= 5 && customerWeight <= 600;
+```
+
 ## If / else
 
 Boolean expressions er centrale i programmering, fordi de benyttes i mange _control structures_, hvoraf den mest basale er `if`/`else`.
