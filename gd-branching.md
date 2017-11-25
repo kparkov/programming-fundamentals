@@ -2,4 +2,4 @@
 
 ### 1. Kassér eventuelle ændringer
 
-![](res/discard-changes.gif)
+![change](res/discard-changes.gif)
