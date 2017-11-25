@@ -21,12 +21,12 @@ Vi opretter den alternative tidslinie, som du kan arbejde på fra nu af. Dette s
 
 ## 2. Lav et commit
 
-Når du har ændringer, som du ønsker at beholde, _committer_ du dem i din egen tidslinie.
+Når du har ændringer, som du ønsker at beholde, _committer_ du dem **i din egen tidslinie**.
 
 ![commit](res/commit.gif)
 
 - Lav nogle ændringer, som efterfølgende kan ses i **Changes**.
-- Sørg for, at din egen branch er **Current branch**.
+- **VIGTIGT**: Sørg for, at **Current branch** er sat til din egen branch.
 - Sørg for, at alle ændringer har et flueben i Changes-listen.
 - Skriv en titel for ændringerne i **Summary**.
 - Tryk på den blå knap, der er markeret med **Commit to [branch]**.
@@ -42,3 +42,6 @@ Når der er centrale ændringer, skal du igennem et ekstra trin.
 - Tryk på synkroniseringsknappen (**Fetch/pull from origin**), der opdaterer _master_-branchen, men ikke din egen.
 - Gå op i menu **Branch > Update from default branch**. Opdateringerne er nu hentet ind i din branch.
 - Tryk på synkroniseringsknappen, så du push'er din egen branch op. Du har nu en opdateret version af din egen branch.
+
+## Bemærkninger
+
