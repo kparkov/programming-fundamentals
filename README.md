@@ -9,7 +9,8 @@ Et grundlæggende kursus i grundlæggende programmering med valg af sproget C# (
 
 ## Program
 
-- [Uge 1](src/Week%201/README.md)
+- [Lektion 1](src/Week%201/README.md)
+- [Lektion 2](src/Week%202/README.md)
 
 ## Hvad kigger jeg på?
 
