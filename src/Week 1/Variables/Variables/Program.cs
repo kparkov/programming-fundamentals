@@ -7,12 +7,8 @@ namespace Variables
         public static void Main(string[] args)
         {
             RunBasicVariablesExample();
-            // RunInferenceExample();
-            // RunMathOperatorsExample();
-            // RunBooleanOperatorsExample();
-            // RunUpdateExample();
-            // RunExercises();
-            // RunExtendedExercises();
+            RunMathOperatorsExample();
+            RunExercises();
 
             Console.ReadKey();
         }
@@ -66,11 +62,21 @@ namespace Variables
             // EXERCISE: BASIC VARIABLE DECLARATION
 
             // Declare a variable that contains your name.
+            string name = "Kristian";
+
             // Declare a variable with your birthyear.
+            int birthyear = 1980;
+
             // Declare a variable with your town of birth.
+            string city = "København";
+
             // Declare a variable that presents yourself, referencing the variable above: "Hi, my name is (my name), I was born ... in ...".
             // Think about how you name the variables.
             // Write the presentation to the Console.
+
+            string presentation = "Hi, my name is " + name + ". I was born in " + city + " in " + birthyear + ".";
+
+            Console.WriteLine(presentation);
 
             int currentYear = DateTime.Now.Year;
 
@@ -78,24 +84,11 @@ namespace Variables
             // You have either had a birthday this year or not, which means you could be two different years of age right now.
             // Declare a variable for the max and min amount of years you could be, and let each be an expression referencing the
             // variables above.
-        }
 
-        private static void RunInferenceExample()
-        {
-            // the type is inferred from the initial assignment when we prefix with var
-            var diameter = 10;
-            var pi = 3.1415;
-            var president = "Trump";
-            var doAndroidsDreamOfElectricSheep = true;
+            int maxAge = currentYear - birthyear;
+            int minAge = maxAge - 1;
 
-            // mixing types are possible when there is a reasonable common type to fall back to (int * double = double)
-            var circumference = diameter * pi;
-
-            // if you want to clarify an ambigious assignment, either prefix with the type...
-            double diameter2 = 10;
-
-            // ...or use the special numeric suffix:
-            var diameter3 = 10d;
+            Console.WriteLine("I am either " + minAge + " or " + maxAge + " years old.");
         }
 
         private static void RunMathOperatorsExample()
@@ -158,140 +151,33 @@ namespace Variables
 
             // There is a group of 7 kids.
 
+            int numberOfKids = 7;
+
             // Two of them have 20 kroner, three have 45 kroner, one has 13.75 kroner, and the last one has 4.50 kroner.
             // Generously of some, they decide to pool all of their money together. What is the sum?
+
+            decimal sumOfMoney = 2 * 20 + 3 * 45 + 13.75m + 4.5m;
+
+            Console.WriteLine("Money total: " + sumOfMoney);
 
             // A donut costs 15 kroner. They decide to buy as many donuts as they can for the sum. 
             // Given that no baker is willing to sell half a donut, how many whole donuts can they buy? (careful: this is tricky!)
 
+            decimal restAfterBuying = sumOfMoney % 15;
+            decimal spentOnDonuts = sumOfMoney - restAfterBuying;
+            decimal numberOfDonuts = spentOnDonuts / 15;
+
+            Console.WriteLine("They can buy " + numberOfDonuts);
+
             // They then decide to divide the donuts equally, potentially slicing individual donuts into smaller bits. 
             // How many do each kid get?
 
+            decimal donutsPerKid = numberOfDonuts / numberOfKids;
+            Console.WriteLine("Each kid gets " + donutsPerKid + " donuts.");
+
             // What amount of money do they have left after buying the donuts?
-        }
 
-        private static void RunBooleanOperatorsExample()
-        {
-            int age = 16;
-            decimal money = 20;
-
-            bool isChild = age < 18;
-            bool isAdult = !isChild;
-            bool isRetirementAge = age >= 65;
-            bool isWorkingAge = isAdult && !isRetirementAge;
-
-            bool getsDiscountInTheBus = isChild || isRetirementAge;
-            bool getsDiscountInTheBus2 = age < 18 || age >= 65;
-
-            bool isTwenty = age == 20;
-            bool isDifferentFromTwenty = age != 20;
-
-            decimal ticketPrice = 25;
-            decimal reducedTicketPrice = 15;
-
-            bool canRideTheBus = money >= ticketPrice || (getsDiscountInTheBus && money >= reducedTicketPrice);
-
-            // EXERCISE: 
-
-            int customerAge = 12;
-            int customerHeight = 152;
-            int customerWeight = 49;
-
-            // The three variables above are the metrics of a customer.
-            // Write tests for the following fictitious Tivoli entry requirements:
-
-            // To try Grøften, you must be at least 3 years old and weigh between 5 and 600 kg.
-            bool canTryGrøften = customerAge >= 3 && customerWeight >= 5 && customerWeight <= 600;
-
-            // To try Mariehønen, you must be at least 5 years old.
-            // To try Veteranbilerne, you must be at least 1 year old and at least 60 cm tall.
-            // To try Ballongyngerne, you must be at least 80 cm tall and must not weigh more than 170 kg.
-            // To try Rutsjebanen, you must not be more than 210 cm or weigh more than 190 kg.
-            // To try Dæmonen, you must be at least 16 years old and less than 80 years old - but no matter what you cannot be taller than 210 or weigh more than 150
-            // To try Kaoshuset, you cannot be exactly 100 years old, and you must either weigh between 40 and 60 or between 90 and 110.
-        }
-
-        private static void RunUpdateExample()
-        {
-            // A variable can be declared only once in the same scope:
-            var x = 1;
-            // var x = 20;
-
-            Console.WriteLine("x (1): " + x);
-
-            // But we can reassign it anytime we like (like declaration, just omitting the type):
-            x = 2;
-
-            Console.WriteLine("x (2): " + x);
-
-            // x MUST keep its type throughout its life. We can NEVER assign something that does not (implicitly) conform to its type:
-            // x = "Test"
-
-            // And we can perform operations on it during reassignment:
-            x = 4 * 5;
-
-            Console.WriteLine("x (3): " + x);
-
-            // We can reference other variables while reassigning it:
-            int y = 4;
-            int z = 5;
-
-            x = y * z + 5;
-
-            // QUESTION: What do you think the value of x is at this point?
-
-            x = y * (z + 5) + 2;
-
-            // QUESTION: What do you think the value of x is at this point?
-
-            var a = "The answer is " + x + ", but what is the question?";
-
-            // QUESTION: What do you think the value of a is?
-            // QUESTION: Why did we need the 'a' variable instead of reusing the 'x' variable for this assignment?
-
-            // We can reference the variable itself during reassignment:
-
-            x = 10;
-            x = x + 3;
-
-            Console.WriteLine("x (4): " + x);
-
-            x = 3;
-            x = x * x;
-
-            Console.WriteLine("x (5): " + x);
-
-            // Shorthand way of self-referencing: (x = x + 3) = (x += 3)
-
-            x = 10;
-            x += 3;
-
-            Console.WriteLine("x (6): " + x);
-
-            y = 5;
-            y -= 2;
-
-            Console.WriteLine("y (7): " + y);
-
-            x = y * z + 5;
-
-            // QUESTION: What do you think the value of x is at this point?
-
-            // CODE SMELL: reusing a variable from an earlier context in a new meaning just to save declaring a new one.
-            // CODE SMELL: variable names that do not indicate their role in the context.
-
-            // todo: x++
-            // todo: string concatenation
-
-            // Shorthand way of incrementing and decrementing: (x = x + 1) = (x++)
-
-            x = 10;
-            x++;
-
-            Console.WriteLine("x (8): " + x);
-
-            // x was declared in this scope. Once we leave this scope, x ceases to exist. The same goes for 
-            // y and z.
+            Console.WriteLine("Money left: " + restAfterBuying);
         }
 
         private static void RunExercises()
@@ -303,26 +189,70 @@ namespace Variables
 
             // PART 1
             // Declare a variable with the name of a movie you want to see at the cinema.
+            string movie = "Blade Runner 2049";
+
             // Declare a variable containing whether the movie is a Danish movie.
+            bool isDanish = false;
+
             // Declare a variable containing the estimated price for the movie ticket.
+            decimal ticketPrice = 110;
+
             // Declare a variable containing the estimated price for a beverage.
+            decimal beveragePrice = 35;
+
             // Declare a variable containing the estimated price for popcorn.
+            decimal popcornPrice = 30;
+
             // Declare a variable containing the total cost of going to see the movie.
+            decimal cinemaTripPrice = ticketPrice + beveragePrice + popcornPrice;
+
             // Write to the console: the name of the movie, whether it is Danish and the total estimated cost of your visit.
+            Console.WriteLine("I want to see " + movie + " (Danish: " + isDanish + "). It is going to cost me " + cinemaTripPrice + "-");
 
             // PART 2
             // Let's pretend that your estimates above are an average for everyone in the audience.
             // Declare a variable containing the estimated number of seats in the movie theater showing the picture.
+            decimal seats = 300;
+
             // Declare a variable containing the expected average ratio of seats taken during a screening. (Example: 0.75 = 75% of seats sold on average)
+            decimal avgRatioSold = 0.7m;
+
             // Declare a variable containing the expected number of seats sold for this screening.
+            decimal expectedNumberSold = seats * avgRatioSold;
+
             // Declare a variable containing the expected cost for the cinema to do a single screening.
+            decimal expectedCost = 18000;
+
             // Declare a variable containing the total revenue of this screening for the cinema.
+            decimal expectedIncome = expectedNumberSold * cinemaTripPrice;
+            decimal expectedRevenue = expectedIncome - expectedCost;
+
             // Present the calculation and results in the Console. Put some energy into formatting, so it is easy to read and understand.
+            Console.WriteLine("");
+            Console.WriteLine("Revenue of a single screening of " + movie);
+            Console.WriteLine("--------------------------------------------------------------------------");
+            Console.WriteLine("Seats in theatre                         " + seats);
+            Console.WriteLine("Ratio sold on average                    " + avgRatioSold);
+            Console.WriteLine("Expected sold                            " + expectedNumberSold);
+            Console.WriteLine("--------------------------------------------------------------------------");
+            Console.WriteLine("Income per customer                      " + cinemaTripPrice);
+            Console.WriteLine("Total screening income                   " + expectedIncome);
+            Console.WriteLine("Total screening cost                     " + expectedCost);
+            Console.WriteLine("--------------------------------------------------------------------------");
+            Console.WriteLine("Total revenue                            " + expectedRevenue);
+            Console.WriteLine("");
 
             // PART 3
             // Update the value of the expected cost for the cinema (not by changing it above, but by re-assigning it below this line).
+            expectedCost = 25000;
+
             // Output the value of the expected revenue again (below this line).
+            Console.WriteLine("The revenue is the same as before, " + expectedRevenue);
+
             // Is the behaviour / result what you expected?
+
+            // Yes. When expectedRevenue was evaluated, the cost was set at 18.000. The relation is not saved, only the result at the time of
+            // evaluation.
         }
     }
 }
