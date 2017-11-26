@@ -259,7 +259,13 @@ else
 
 Bemærk, at det kun er den første blok med positiv betingelse, der kører, selvom en senere blok også ville producere en positiv betingelse. _Rækkefølgen_ af de enkelte led i `if`/`else if`/`else` bliver dermed vigtig.
 
-### Øvelse: _detaljer følger_
+### Øvelse: bliver vi lukket ind i biffen?
+
+Solution: `IfElse.sln`
+
+En øvelse i to dele, hvor man først skal tjekke, om alle krav er opfyldt for at se filmen. 
+
+Herefter ønsker vi at give detaljeret feedback, hvis kravene ikke er opfyldt, og fortælle brugeren, hvilke krav der ikke er opfyldt.
 
 ## While
 
@@ -295,11 +301,9 @@ Bemærk, at der lægges 1 til `counter` lige før blokkens slutning, så når de
 
 Betingelsen tjekkes altid umiddelbart inden blokken kører igen, så den kører ikke en omgang med værdien 5 i `counter`.
 
-### Øvelse: _detaljer følger_
-
 ## Afsluttende øvelse: gæt et tal mellem 1 og 100
 
-
+Solution: `GuessingGame.sln`
 
 Vi skal lave et spil. Computeren tænker på et tilfældigt tal mellem 1 og 100. Spilleren skal gætte tallet.
 
