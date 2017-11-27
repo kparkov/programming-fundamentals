@@ -21,6 +21,25 @@ namespace BooleanExpressions
             // To try Rutsjebanen, you must not be more than 210 cm or weigh more than 190 kg.
             // To try Dæmonen, you must be at least 16 years old and less than 80 years old - but no matter what you cannot be taller than 210 or weigh more than 150
             // To try Kaoshuset, you cannot be exactly 100 years old, and you must either weigh between 40 and 60 or between 90 and 110.
+
+
+            bool cantryMariehonen = customerAge >= 5;
+            Console.WriteLine("Du kan prøve Mariehønen: " + cantryMariehonen);
+
+            bool cantryveteranbilerne = customerAge >= 1 && customerHeight >= 60;
+            Console.WriteLine("Du kan prøve Veteranbilerne: " + cantryveteranbilerne);
+
+            bool cantryBallongyngerne = customerHeight >= 80 && customerWeight <= 170;
+            Console.WriteLine("Du kan prøve Ballongyngerne: " + cantryBallongyngerne);
+
+            bool cantryRutsjebanen = customerHeight <= 210;
+            Console.WriteLine("Du kan prøve Rutsjebanen: " + cantryRutsjebanen);
+
+            bool cantryDaemonen = customerAge >= 16 && customerAge < 80 && customerHeight < 210 && customerWeight < 150;
+            Console.WriteLine("Du kan prøve Daemonen: " + cantryDaemonen);
+
+
+            Console.ReadKey();
         }
     }
 }

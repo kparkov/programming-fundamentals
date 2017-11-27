@@ -21,6 +21,37 @@ namespace IfElse
             // We want to provide more specific feedback to the customer. If the customer cannot go and see the movie, we want to
             // provide detailed feedback: was it his/her age, or lack of money, or perhaps both?
 
+
+            bool rightage = (age >= movieMinimumAgeRequirement);
+            bool enoughmoney = (money >= moviePrice);
+            bool canseemovie = (rightage && enoughmoney);
+                
+            if (canseemovie)
+            {
+                Console.WriteLine("Du kan se filmen");
+                    
+            }
+            else
+            {
+                if (!rightage)
+                {
+                    Console.WriteLine("Du havde ikke den rette alder");
+   
+                }
+
+                if (!enoughmoney)
+                {
+                    Console.WriteLine("Du havde ikke penge nok");
+                }
+                
+            }
+
+       
+
+
+          
+
+
             Console.ReadKey();
         }
     }
