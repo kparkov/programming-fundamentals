@@ -8,13 +8,48 @@ namespace GuessingGame
         {
             // We can get a new random number like this:
             int secretNumber = Computer.ThinkOfNumber();
-            Console.WriteLine("Jeg tænker på det meget hemmelige tal: " + secretNumber);
+
 
             // We can get a user guess like this:
-            int userGuess = User.GetGuess();
-            Console.WriteLine("Brugeren gættede på: " + userGuess);
 
-            Console.WriteLine("Brug while og if/else if/else til at lave det til et gættespil.");
+
+            //bool win = false;
+            bool keepPlaying = true;
+            int counter = 0;
+            while (keepPlaying)
+            {
+                int userGuess = User.GetGuess();
+                counter = counter + 1;
+               
+                if (userGuess < secretNumber)
+                {
+                    Console.WriteLine("Forkert - det er for lavt.");
+                    
+                }
+                else if (userGuess > secretNumber)
+                {
+                    Console.WriteLine("Forkert - det er for højt.");
+                    
+
+                }
+                else
+                {
+                    Console.WriteLine("Tillykke - du gættede rigtigt! Så mange gæt brugte du: " + counter);
+                    
+                    keepPlaying = false;
+                }
+
+                
+            }
+
+
+
+            
+
+
+            Console.ReadKey();
+
+            
         }
     }
 }
