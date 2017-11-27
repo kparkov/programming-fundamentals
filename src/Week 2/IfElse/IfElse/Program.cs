@@ -17,9 +17,33 @@ namespace IfElse
             // EXERCISE: CAN WE GO SEE THE MOVIE?
             // Write an if/else that checks whether the customer fulfills all the requirements for seeing the movie, and write the result in the Console.
 
+            bool isRightAge = age >= 13;
+            bool isEnoughMoney = money >= moviePrice;
+
+            bool canSeeMovie = isRightAge && isEnoughMoney;
+
+            if (canSeeMovie)
+            {
+                Console.WriteLine("Kom indenfor");
+
+
+
+
+            }
+
+            else
+            {
+                Console.WriteLine("Piss Off");
+                Console.WriteLine(" Man skal være " + movieMinimumAgeRequirement + "og din alder er " + age + "så den er" + isRightAge);
+                Console.WriteLine("Man skal have mindst" + moviePrice);
+            }
+
+
             // EXERCISE: SPECIFIC FEEDBACK
             // We want to provide more specific feedback to the customer. If the customer cannot go and see the movie, we want to
             // provide detailed feedback: was it his/her age, or lack of money, or perhaps both?
+
+            
 
             Console.ReadKey();
         }
