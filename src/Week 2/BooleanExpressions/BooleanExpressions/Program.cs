@@ -17,7 +17,6 @@ namespace BooleanExpressions
 
             // To try Mariehønen, you must be at least 5 years old.
             bool canTryMariehønen = customerAge >= 5;
-            Console.WriteLine("Kan customer prøve Marienhønen? "+ canTryMariehønen);
             // To try Veteranbilerne, you must be at least 1 year old and at least 60 cm tall.
             bool canTryVeteranbilerne = customerAge >= 1 && customerHeight >= 60;
             Console.WriteLine("Kan customer prøve Veteranbilerne? Alder er: " + customerAge + " og højde er: " + customerHeight + " så: " + canTryMariehønen);
