@@ -6,15 +6,41 @@ namespace GuessingGame
     {
         static void Main(string[] args)
         {
-            // We can get a new random number like this:
             int secretNumber = Computer.ThinkOfNumber();
-            Console.WriteLine("Jeg tænker på det meget hemmelige tal: " + secretNumber);
 
-            // We can get a user guess like this:
-            int userGuess = User.GetGuess();
-            Console.WriteLine("Brugeren gættede på: " + userGuess);
+            bool gameIsWon = false;
+            int counter = 0;
+            string textBase = "Forkert. Dit næste gæt skal være";
+            string highGuessText = textBase + " lavere.";
+            string lowGuessText = textBase + " højere.";
 
-            Console.WriteLine("Brug while og if/else if/else til at lave det til et gættespil.");
+            while (!gameIsWon)
+            {
+                int userGuess = User.GetGuess();
+                counter = counter + 1;
+
+                if (userGuess > secretNumber)
+                {
+                    Console.WriteLine(highGuessText);
+                }
+                else if (userGuess < secretNumber)
+                {
+                    Console.WriteLine(lowGuessText);
+                }
+                else
+                {
+                    gameIsWon = true;
+                }
+            }
+
+            Console.WriteLine("Tillykke. Du klarede det på " + counter + " gæt.");
+
+            if (counter > 7)
+            {
+                Console.WriteLine("Vidste du, at en optimal spilstrategi sikrer, at du aldrig skal gætte mere end 7 gange?");
+            }
+
+            Console.ReadKey();
         }
     }
 }
