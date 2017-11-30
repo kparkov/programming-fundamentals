@@ -51,6 +51,7 @@ namespace Exercises
             // 17 - (no limit): klanspejdere
 
             int scoutAge;
+            int notLeaderScoutAge;
             string group = "(No group yet)";
             int isScoutLeader;
 
@@ -89,29 +90,29 @@ namespace Exercises
                 else if (isScoutLeader != 1)
                 {
                     Console.WriteLine("Så du er ikke leder. Men hvor gammel er du? Skriv din alder:  ");
-                    if (int.TryParse(Console.ReadLine(), out scoutAge))
+                    if (int.TryParse(Console.ReadLine(), out notLeaderScoutAge))
                     {
-                        if (scoutAge < 5)
+                        if (notLeaderScoutAge < 5)
                         {
                             Console.WriteLine("Du er Haletudse!");
                         }
-                        else if (scoutAge >= 6 && scoutAge <= 7)
+                        else if (notLeaderScoutAge >= 6 && notLeaderScoutAge <= 7)
                         {
                             Console.WriteLine("Du er Bæver!");
                         }
-                        else if (scoutAge >= 8 && scoutAge <= 10)
+                        else if (notLeaderScoutAge >= 8 && notLeaderScoutAge <= 10)
                         {
                             Console.WriteLine("Du er Ulveunge!");
                         }
-                        else if (scoutAge >= 11 && scoutAge <= 14)
+                        else if (notLeaderScoutAge >= 11 && notLeaderScoutAge <= 14)
                         {
                             Console.WriteLine("Du er Tropspejder!");
                         }
-                        else if (scoutAge >= 15 && scoutAge <= 16)
+                        else if (notLeaderScoutAge >= 15 && notLeaderScoutAge <= 16)
                         {
                             Console.WriteLine("Du er Seniorspejder!");
                         }
-                        else if (scoutAge >= 17)
+                        else if (notLeaderScoutAge >= 17)
                         {
                             Console.WriteLine("Du er Klanspejder!");
                         }
