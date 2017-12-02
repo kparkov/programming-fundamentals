@@ -88,7 +88,6 @@ namespace Exercises
                 }
                 else if (isScoutLeader != 1)
                 {
-<<<<<<< HEAD
                     Console.WriteLine("Så du er ikke leder? Hvor gammel er du?  ");
                     if (int.TryParse(Console.ReadLine(), out notLeaderAge))
                     {
@@ -117,77 +116,10 @@ namespace Exercises
                             Console.WriteLine("Så er du Klanspejder!");
                         }
                     }
-                }
-                {
-
-                }
+                }   
             }
-=======
-                    Console.WriteLine("Så du er ikke leder. Men hvor gammel er du? Skriv din alder:  ");
-                    if (int.TryParse(Console.ReadLine(), out scoutAge))
-                    {
-                        if (scoutAge < 5)
-                        {
-                            Console.WriteLine("Du er Haletudse!");
-                        }
-                        else if (scoutAge >= 6 && scoutAge <= 7)
-                        {
-                            Console.WriteLine("Du er Bæver!");
-                        }
-                        else if (scoutAge >= 8 && scoutAge <= 10)
-                        {
-                            Console.WriteLine("Du er Ulveunge!");
-                        }
-                        else if (scoutAge >= 11 && scoutAge <= 14)
-                        {
-                            Console.WriteLine("Du er Tropspejder!");
-                        }
-                        else if (scoutAge >= 15 && scoutAge <= 16)
-                        {
-                            Console.WriteLine("Du er Seniorspejder!");
-                        }
-                        else if (scoutAge >= 17)
-                        {
-                            Console.WriteLine("Du er Klanspejder!");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Det kan ikke passe.");
-                        }
-                        Console.ReadKey();
-
-
-                    }
-
-                }
->>>>>>> cd5b7f529c6d8434e7d441557aafed39e88f1ddf
-
         }
-
-
-
-
-
-
-
-<<<<<<< HEAD
-        // 1A. Construct an if / else if / else statement that assigns the group depending on the age.
-        // 1B. However, if you are a scout leader, you will always be assigned to the "Ledere" group, no matter what your age is.
-        // 1C. But they do require that you are at least 15 years of age to become a leader, so if you are less than 15 and a leader, we should write an error.
-
-        //Console.WriteLine(group);
-
-        //Console.ReadKey();
-=======
-                // 1A. Construct an if / else if / else statement that assigns the group depending on the age.
-                // 1B. However, if you are a scout leader, you will always be assigned to the "Ledere" group, no matter what your age is.
-                // 1C. But they do require that you are at least 15 years of age to become a leader, so if you are less than 15 and a leader, we should write an error.
-
-                //Console.WriteLine(group);
-
-                //Console.Readkey();
-            }
->>>>>>> cd5b7f529c6d8434e7d441557aafed39e88f1ddf
-        }
+    }
 }
+
 
