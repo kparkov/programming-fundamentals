@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# Uge 3: 
-
-## type inference (var)
-## Lists and foreach loops
-=======
 # Uge 3: lister
 Indtil nu har vi kun arbejdet med simple _built-in_ typer (`string`, `ìnt`, `bool`, osv.). Der er i virkeligheden 15 built-in typer i C#, men de fleste bruges sjældent.
 
@@ -13,38 +7,7 @@ Vi har arbejdet i konteksten af komplekse typer før. Nøgleordet `class` erklæ
 
 Den første komplekse type vi skal kigge på, er `List`, og man vil med det samme bemærke flere ting i erklæringen, der stikker ud i forhold til en simpel datatype.
 
-## `var` type inference
-Indtil nu har vi erklæret variabler ved at starte med datatypen, fx:
-
-```csharp
-string president = "Trump";
-int age = 20;
-bool isAdult = true;
-```
-
-Når værdien sættes direkte efter erklæringen (_declaration and assignment_), kan vi starte med ordet `var` i stedet:
-
-```csharp
-var president = "Trump";
-var age = 20;
-var isAdult = true;
-```
-
-Resultatet er præcis det samme som før - altså, at den første bliver en `string`, den anden er en `int` og den tredje er en `bool`. Programmet _antager_ typen ud fra den initialiserede værdi. Dette hedder _type inference_. Fordi vi sætter den første linie til en tekst, må variablen jo være en `string`. Fordi den tredje sættes til `true`, må det jo være en `bool`. 
-
-Men hvad med tallet? 
-
-I princippet kunne tallet jo være tænkt som en `decimal`, der bare tilfældigvis ikke starter med nogle decimaler. Men fordi vi giver `20`, vil `age` blive en `int`. Man skal være opmærksom på, at dette er tilfældet, for typen af en variabel kan som bekendt ikke ændres efterfølgende - så når senere forsøger at opdatere med et decimaltal, får man en fejl.
-
-```csharp
-var money = 20m;
-``` 
-
-Her bruger vi suffix-symbolet `m`, der angiver at tallet er en decimal. Så vil `money` ikke blive misforstået som en `int`. Men så kunne vi næsten lige så godt bare have skrevet `decimal` til at starte med.
-
-`var` er en bekvem genvej nu, men bliver _meget_ bekvem senere i forløbet. Prisen for den højere hastighed er en lidt mindre transparent og mindre læsbar kode.
-
-## Lists and foreach loops
+## `List` og `foreach` loops
 
 En liste erklæres som typen `List`, men til `List` hører et såkaldt _type-argument_.
 
@@ -63,7 +26,13 @@ List<string> fruits = new List<string>()
 
 fruits.Add("Mango");
 fruits.Remove("Orange");
+```
 
+Vi kan herefter benytte en `foreach` loop til at besøge hvert element i koden.
+
+Som vi kan huske fra sidst gang, er loops blokke af kode, der gentages. Til forskel fra `while`, der kørte så længe en betingelse var opfyldt, kører `foreach` én gang for hvert element i en liste, og sørger samtidig for, at den centrale variabel skiftes ud med det enkelte element.
+
+```csharp
 foreach (string fruit in fruits) 
 {
     string presentation = "In my basket I have: " + fruit;
@@ -83,10 +52,143 @@ In my basket I have: Mango
 There are currently 4 fruits in the basket.
 ```
 
+Inde i `foreach`-blokken repræsenterer `fruits` listen, mens `fruit` er det aktuelle element. Hver gang blokken kører, er `fruit` rykket til det næste element i listen, og ikke overraskende kører blokken, indtil det sidste element er besøgt.
 
->>>>>>> 7b9f431b0c607fc18ce6cbe0e50bc0eeb0ed059a
-## for loops
-## Scopes?
-## DOT notation?
-## Functions and methods
+## Methods and properties
 
+Alle datatyper er _objekter_, hvilket betyder, at de har _methods_ og _properties_. Vi stødte på methods i afsnittet om `List`, i det vi tilføjede elementer med metoden `fruits.Add(item)` og fjernede dem med `fruits.Remove(item)`. Vi stødte på en enkelt property, nemlig `fruits.Count`.
+
+Betragt følgende eksempel:
+
+```csharp
+string name = "Donald Trump";
+string presentation = "Der er " + name.Length + " tegn i navnet " + name + ".";
+```
+
+Resultatet er:
+
+```
+Der er 12 tegn i navnet Donald Trump.
+```
+
+For at finde strengens længde, refererede vi til en _property_ ved `name`, nemlig `name.Length`. Alle variabler af typen `string` har denne property, og bærer derfor informationen om sin egen længde med sig (bemærk at space også er et tegn - der er jo kun 11 _bogstaver_ i nanvet). Det præcise sæt af properties og methods er alene afgjort af datatypen, og alle individuelle tilfælde af datatypen udstiller samme sæt.
+
+På samme måde har alle variabler af typen `List` en property `Count`, der angiver det aktuelle antal elementer i listen.
+
+Når vi skal tilgå properties eller methods, bruger vi punktum efter variablens navn. Punktum betyder, at vi nu vil kigge nærmere på objektets funktionalitet. Det, der følger efter punktum, vil nødvendigvis være en reference til et facet af objektet.
+
+Hvis properties er _egenskaber_ ved objektet, på samme måde som antallet af hjul er en af bilens egenskaber - så er methods _funktioner_, på samme måde som acceleration er en af bilens funktioner.
+
+```csharp
+string name = "Vladimir Putin";
+string presentation = "LÆNGE LEVE " + name.ToUpper();
+```
+
+Dette resulterer i:
+
+```
+LÆNGE LEVE VLADIMIR PUTIN
+```
+
+Metoden `ToUpper()` _returnerer_ en variant af sig selv, der er sat i versaler.
+
+Dette kaldes et _method call_ (metodekald). Hvor henvisning til en property dybest set bare er en variabel der læses, er et method call en kodeblok, der kaldes og eksekveres. Det er en operation.
+
+Methods kan kendes på parentes-sættet, der altid afslutter metodekaldet. At parenteserne i `ToUpper()`-kaldet er tomme, betyder at metoden ikke tager _parametre_.
+
+Metoder, der tager parametre, har en dynamisk adfærd. Betragt følgende eksempel:
+
+```csharp
+string name = "Vladimir Putin";
+bool correctStart = name.StartsWith("Donald");
+
+if (correctStart) 
+{
+    Console.WriteLine("Navnet starter med Donald.");
+}
+else 
+{
+    Console.WriteLine("Navnet starter ikke med Donald.");
+}
+```
+Dette resulterer i:
+
+```
+Navnet starter ikke med Donald.
+```
+
+Havde vi i stedet kaldt `name.StartsWith("Vladimir")`, så ville beskeden have været positiv. 
+
+Vi siger, at `StartsWith` er en metode, der tager en parameter af typen tekst. Den _returnerer_ herefter en `bool` (`true` eller `false`), der angiver om variablen starter med den givne parameter.
+
+En method kan sommetider tage _flere_ parametre, og her er rækkefølgen vigtig.
+
+For eksempel:
+
+```csharp
+string text = "The quick brown fox jumps over the lazy dog.";
+string changed = text.Replace("fox", "bear");
+Console.WriteLine(changed);
+```
+
+Output:
+
+```
+The quick brown bear jumps over the lazy dog.
+```
+
+`Replace` tager to parametre: den første er teksten vi leder efter. Den anden er teksten, som skal stå i stedet. Bytter vi om på rækkefølgen, ændrer vi også betydningen.
+
+### Flere eksempler på `string` methods
+
+```csharp
+string name = "Shinzo Abe";
+
+// Test for occurence of a substring within the string
+name.Contains("zo");   // => true
+name.Contains("wuut"); // => false
+
+// Like StartsWith, but tests if the string ends with the parameter
+name.EndsWith("Abe");  // => true
+name.EndsWith("Shin"); // => false
+
+// Set all characters to their lower variant
+name.ToLower();        // => shinzo abe
+
+// Find the index (position) of a substring within the string
+name.IndexOf("Ab");    // => 7
+name.IndexOf("Shin");  // => 0
+name.IndexOf("wuut");  // => -1
+
+// Get a substring from a start index and a count
+name.Substring(4, 4);  // => "zo A"
+```
+
+### Flere eksempler på `List` methods
+```csharp
+List<string> fruits = new List<string>() 
+{
+    "Apple",
+    "Orange",
+    "Banana",
+    "Pineapple"
+};
+
+// Test for occurence of an element in the list
+fruits.Contains("Banana");       // => true
+fruits.Contains("Pair");         // => false
+
+// Find the index (position) of a value with the list
+fruits.IndexOf("Orange");        // => 1
+fruits.IndexOf("Pineapple");     // => 3
+fruits.IndexOf("Ban");           // => -1
+
+// Sort the elements
+fruits.Sort();                   // => [void] (now sorted to Apple, Banana, Orange, Pineapple)
+
+// Reverse the order of the elements
+fruits.Reverse();                // => [void] (now sorted to Pineapple, Orange, Banana, Apple)
+
+// Remove all elements from the list
+fruits.Clear();                  // => [void]
+```
