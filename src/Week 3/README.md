@@ -7,56 +7,9 @@ Vi har arbejdet i konteksten af komplekse typer før. Nøgleordet `class` erklæ
 
 Den første komplekse type vi skal kigge på, er `List`, og man vil med det samme bemærke flere ting i erklæringen, der stikker ud i forhold til en simpel datatype.
 
-## `List` og `foreach` loops
-
-En liste erklæres som typen `List`, men til `List` hører et såkaldt _type-argument_.
-
-Når man laver en liste, skal vi angive hvilken type elementer listen kan indeholde. En liste kan konstrueres til at tage imod enhver type, men alle elementer skal være af den angivne type.
-
-I det følgende erklærer vi en liste, der tager imod `string`'s.
-
-```csharp
-List<string> fruits = new List<string>() 
-{
-    "Apple",
-    "Orange",
-    "Banana",
-    "Pineapple"
-};
-
-fruits.Add("Mango");
-fruits.Remove("Orange");
-```
-
-Vi kan herefter benytte en `foreach` loop til at besøge hvert element i koden.
-
-Som vi kan huske fra sidst gang, er loops blokke af kode, der gentages. Til forskel fra `while`, der kørte så længe en betingelse var opfyldt, kører `foreach` én gang for hvert element i en liste, og sørger samtidig for, at den centrale variabel skiftes ud med det enkelte element.
-
-```csharp
-foreach (string fruit in fruits) 
-{
-    string presentation = "In my basket I have: " + fruit;
-    Console.WriteLine(presentation);
-}
-
-Console.WriteLine("There are currently " + fruits.Count + " fruits in the basket.");
-```
-
-Dette resulterer i:
-
-```
-In my basket I have: Apple
-In my basket I have: Banana
-In my basket I have: Pineapple
-In my basket I have: Mango
-There are currently 4 fruits in the basket.
-```
-
-Inde i `foreach`-blokken repræsenterer `fruits` listen, mens `fruit` er det aktuelle element. Hver gang blokken kører, er `fruit` rykket til det næste element i listen, og ikke overraskende kører blokken, indtil det sidste element er besøgt.
-
 ## Methods and properties
 
-Alle datatyper er _objekter_, hvilket betyder, at de har _methods_ og _properties_. Vi stødte på methods i afsnittet om `List`, i det vi tilføjede elementer med metoden `fruits.Add(item)` og fjernede dem med `fruits.Remove(item)`. Vi stødte på en enkelt property, nemlig `fruits.Count`.
+Alle datatyper er _objekter_, hvilket betyder, at de har _methods_ og _properties_.
 
 Betragt følgende eksempel:
 
@@ -164,6 +117,53 @@ name.IndexOf("wuut");  // => -1
 name.Substring(4, 4);  // => "zo A"
 ```
 
+## `List` og `foreach` loops
+
+En liste erklæres som typen `List`, men til `List` hører et såkaldt _type-argument_.
+
+Når man laver en liste, skal vi angive hvilken type elementer listen kan indeholde. En liste kan konstrueres til at tage imod enhver type, men alle elementer skal være af den angivne type.
+
+I det følgende erklærer vi en liste, der tager imod `string`'s.
+
+```csharp
+List<string> fruits = new List<string>() 
+{
+    "Apple",
+    "Orange",
+    "Banana",
+    "Pineapple"
+};
+
+fruits.Add("Mango");
+fruits.Remove("Orange");
+```
+
+Vi kan herefter benytte en `foreach` loop til at besøge hvert element i koden.
+
+Som vi husker fra sidste gang, er en loop en blok af kode, der kører flere gange. Til forskel fra `while`, der kørte så længe en betingelse var opfyldt, kører `foreach` én gang for hvert element i en liste, og sørger samtidig for, at den centrale variabel skiftes ud med det enkelte element.
+
+```csharp
+foreach (string fruit in fruits) 
+{
+    string presentation = "In my basket I have: " + fruit;
+    Console.WriteLine(presentation);
+}
+
+Console.WriteLine("There are currently " + fruits.Count + " fruits in the basket.");
+```
+
+Dette resulterer i:
+
+```
+In my basket I have: Apple
+In my basket I have: Banana
+In my basket I have: Pineapple
+In my basket I have: Mango
+There are currently 4 fruits in the basket.
+```
+
+Inde i `foreach`-blokken repræsenterer `fruits` listen, mens `fruit` er det aktuelle element. Hver gang blokken kører, er `fruit` rykket til det næste element i listen, og ikke overraskende kører blokken, indtil det sidste element er besøgt.
+
 ### Flere eksempler på `List` methods
 ```csharp
 List<string> fruits = new List<string>() 
@@ -192,3 +192,5 @@ fruits.Reverse();                // => [void] (now sorted to Pineapple, Orange, 
 // Remove all elements from the list
 fruits.Clear();                  // => [void]
 ```
+
+## Afsluttende øvelse: 
