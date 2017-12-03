@@ -7,7 +7,8 @@ namespace Debugging
     {
         static void Main(string[] args)
         {
-            // EXERCISE
+            // EXERCISE: THE LAZY DEVELOPER
+            // The following code works as intended, but is hard to understand.
             // a. Write a comment above each line of code. Explain what each line of code does or is expected to do.
             // b. Mix pure analysis, Console.WriteLine and debugging to explain what the code as a whole does. You might even arrive at an idea of what it could be used for.
             // c. Rename each variable to improve the readability of the entire program.
@@ -17,7 +18,6 @@ namespace Debugging
             List<int> lnum = new List<int>();
             List<int> anum = new List<int>();
 
-            int lb = 1;
             int ub = 36;
             int lnt = 7;
             int ant = 1;
@@ -39,6 +39,8 @@ namespace Debugging
                 x = x + 1;
             }
 
+            // We now expect 'pool' to contain ...
+
             while (lnum.Count < lnt || anum.Count < ant)
             {
                 int next = r.Next(0, pool.Count);
@@ -54,6 +56,10 @@ namespace Debugging
 
                 pool.RemoveAt(next);
             }
+
+            // We now expect lnum to contain ...
+            // We now expect anum to contain ...
+            // We now expect pool to contain ...
 
             lnum.Sort();
             anum.Sort();

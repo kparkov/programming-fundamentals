@@ -31,11 +31,9 @@ Resultatet er:
 Der er 12 tegn i navnet Donald Trump.
 ```
 
-For at finde strengens længde, refererede vi til en _property_ ved `name`, nemlig `name.Length`. Alle variabler af typen `string` har denne property, og bærer derfor informationen om sin egen længde med sig (bemærk at space også er et tegn - der er jo kun 11 _bogstaver_ i navnet). Det præcise sæt af properties og methods er alene afgjort af datatypen, og alle individuelle tilfælde af datatypen udstiller samme sæt.
+For at finde strengens længde, refererede vi til en _property_ ved `name`, nemlig `name.Length`. Alle variabler af typen `string` har denne property, og bærer derfor informationen om sin egen længde med sig (bemærk at space også er et tegn - der er jo egentlig kun 11 _bogstaver_ i navnet). Det præcise sæt af properties og methods er alene afgjort af datatypen, og alle individuelle tilfælde af datatypen udstiller samme sæt.
 
-På samme måde har alle variabler af typen `List` en property `Count`, der angiver det aktuelle antal elementer i listen.
-
-Når vi skal tilgå properties eller methods, bruger vi punktum efter variablens navn. Punktum betyder, at vi nu vil kigge nærmere på objektets funktionalitet. Det, der følger efter punktum, vil nødvendigvis være en reference til et facet af objektet.
+Når vi skal tilgå properties eller methods, bruger vi punktum efter variablens navn. Punktum betyder, at vi nu vil kigge nærmere på objektets funktionalitet. Det, der følger efter et punktum, vil nødvendigvis referere til et facet af objektet.
 
 Hvis properties er _egenskaber_ ved objektet, på samme måde som antallet af hjul er en af bilens egenskaber - så er methods _funktioner_, på samme måde som acceleration er en af bilens funktioner.
 
@@ -136,7 +134,7 @@ name.Split(" ")              // => string[] { "Shinzo", "Abe" }
 name.Split(" ").ToList()     // => List<string> { "Shinzo", "Abe" }
 ```
 
-### Øvelse: manipulation og undersøgelse af `string`s
+### Øvelse: Methodical disassembly
 
 Solution: `MethodsAndProperties.sln`
 
@@ -226,4 +224,24 @@ fruits.Reverse();                // => [void] (now sorted to Pineapple, Orange, 
 fruits.Clear();                  // => [void]
 ```
 
-## Afsluttende øvelse: _detaljer følger_
+### Øvelse: The lazy developer
+
+Solution: `Debugging.sln`
+
+I denne øvelse skal vi prøve noget nyt. I stedet for at tilvirke vores egen kode, skal vi læse og forstå en andens kode, for at forklare hvad der foregår. 
+
+Denne kode er halvdårligt skrevet. Den gør det rigtige, men variablerne er ubehjælpsomt navngivet, og fejlmeddelelser er ubrugelige. Vi skal udrede trådene.
+
+Inden vi kan påbegynde opgaven, skal vi lære **debugging**-featuren i Visual Studio.
+
+### Øvelse: Order from chaos
+
+Solution: `Lists.sln`
+
+Fra en række tilfældige tal ønsker vi at udtrække forskellige kerneinformationer, samt at filtrere listen for de mest interessante resultater.
+
+### Øvelse: A minuscule mistake
+
+Solution: `Lists.sln`
+
+En lille opgave, der viser sig at være lidt tricky, og som kan løses på **mange** måder.
