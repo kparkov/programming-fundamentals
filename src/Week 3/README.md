@@ -29,7 +29,7 @@ Resultatet er:
 Der er 12 tegn i navnet Donald Trump.
 ```
 
-For at finde strengens længde, refererede vi til en _property_ ved `name`, nemlig `name.Length`. Alle variabler af typen `string` har denne property, og bærer derfor informationen om sin egen længde med sig (bemærk at space også er et tegn - der er jo kun 11 _bogstaver_ i nanvet). Det præcise sæt af properties og methods er alene afgjort af datatypen, og alle individuelle tilfælde af datatypen udstiller samme sæt.
+For at finde strengens længde, refererede vi til en _property_ ved `name`, nemlig `name.Length`. Alle variabler af typen `string` har denne property, og bærer derfor informationen om sin egen længde med sig (bemærk at space også er et tegn - der er jo kun 11 _bogstaver_ i navnet). Det præcise sæt af properties og methods er alene afgjort af datatypen, og alle individuelle tilfælde af datatypen udstiller samme sæt.
 
 På samme måde har alle variabler af typen `List` en property `Count`, der angiver det aktuelle antal elementer i listen.
 
@@ -48,7 +48,7 @@ Dette resulterer i:
 LÆNGE LEVE VLADIMIR PUTIN
 ```
 
-Metoden `ToUpper()` _returnerer_ en variant af sig selv, der er sat i versaler.
+Metoden `ToUpper()` _returnerer_ en variant af strengen, der er sat i versaler.
 
 Dette kaldes et _method call_ (metodekald). Hvor henvisning til en property dybest set bare er en variabel der læses, er et method call en kodeblok, der kaldes og eksekveres. Det er en operation.
 
@@ -113,16 +113,32 @@ name.EndsWith("Shin"); // => false
 // Set all characters to their lower variant
 name.ToLower();        // => shinzo abe
 
-// Find the index (position) of a substring within the string
+// Find the index (position) of the first occurence of substring within the string
 name.IndexOf("Ab");    // => 7
 name.IndexOf("Shin");  // => 0
 name.IndexOf("wuut");  // => -1
 
+// Find the index (position) of the first occurence of substring starting at a specific index
+"Hurra Hurra Hurra!".IndexOf("H", 3);   // => 6
+"Hurra Hurra Hurra!".IndexOf("H", 6);   // => 6
+"Hurra Hurra Hurra!".IndexOf("H", 7);   // => 12
+
+// Find the index (position) of the last occurence of substring within the string
+"ABBA".LastIndexOf("B")  // => 2
+
 // Get a substring from a start index and a count
 name.Substring(4, 4);  // => "zo A"
+
+// Split a string into an array of strings by defining a delimiter
+name.Split(" ")              // => string[] { "Shinzo", "Abe" }
+name.Split(" ").ToList()     // => List<string> { "Shinzo", "Abe" }
 ```
 
-### Øvelse: _detaljer følger_
+### Øvelse: manipulation og undersøgelse af `string`s
+
+Solution: `MethodsAndProperties.sln`
+
+Vi skal benytte properties og methods i kombination for at få struktureret information ud af teksterne.
 
 ## `List` og `foreach` loops
 
@@ -130,7 +146,7 @@ En liste erklæres som typen `List`, men til `List` hører et såkaldt _type-arg
 
 Når man laver en liste, skal vi angive hvilken type elementer listen kan indeholde. En liste kan konstrueres til at tage imod enhver type, men alle elementer skal være af den angivne type.
 
-I det følgende erklærer vi en liste, der tager imod `string`'s.
+I det følgende erklærer vi en liste, der tager imod `string`'s. Listen starter med fire frugter. Herefter tilføjer vi en, og fjerner en anden.
 
 ```csharp
 List<string> fruits = new List<string>() 
@@ -157,6 +173,8 @@ foreach (string fruit in fruits)
 }
 
 Console.WriteLine("There are currently " + fruits.Count + " fruits in the basket.");
+
+Console.WriteLine("The fruit at position 2 is: " + fruits[2]);
 ```
 
 Dette resulterer i:
@@ -167,9 +185,12 @@ In my basket I have: Banana
 In my basket I have: Pineapple
 In my basket I have: Mango
 There are currently 4 fruits in the basket.
+The fruit at position 2 is: Pineapple
 ```
 
-Inde i `foreach`-blokken repræsenterer `fruits` listen, mens `fruit` er det aktuelle element. Hver gang blokken kører, er `fruit` rykket til det næste element i listen, og ikke overraskende kører blokken, indtil det sidste element er besøgt.
+Inde i `foreach`-blokken peger `fruits` på listen, mens `fruit` er det aktuelle element. Hver gang blokken kører, er `fruit` rykket til det næste element i listen, og ikke overraskende kører blokken, indtil det sidste element er besøgt.
+
+Bemærk, at vi kan tilgå enkelte elementer i listen ved hjælp af et _index_. `fruits` er en liste, og lister kan tage imod et index, hvis vi ønsker direkte adgang til det enkelte element. Index starter altid fra `0`, så det første element er `fruits[0]`, mens det sidste kan findes på `fruits[fruits.Count - 1]`.
 
 ### Flere eksempler på `List` methods
 ```csharp
@@ -185,10 +206,13 @@ List<string> fruits = new List<string>()
 fruits.Contains("Banana");       // => true
 fruits.Contains("Pair");         // => false
 
-// Find the index (position) of a value with the list
+// Find the index (position) of the first occurence of an item
 fruits.IndexOf("Orange");        // => 1
 fruits.IndexOf("Pineapple");     // => 3
 fruits.IndexOf("Ban");           // => -1
+
+// Find the index (position) of the last occurence of an item
+fruits.LastIndexOf("Orange");    // => 1
 
 // Sort the elements
 fruits.Sort();                   // => [void] (now sorted to Apple, Banana, Orange, Pineapple)
