@@ -7,6 +7,11 @@ Vi har arbejdet i konteksten af komplekse typer før. Nøgleordet `class` erklæ
 
 Den første komplekse type vi skal kigge på, er `List`, og man vil med det samme bemærke flere ting i erklæringen, der stikker ud i forhold til en simpel datatype.
 
+## Indhold
+
+- [Methods and properties](#methods-and-properties)
+- [List og foreach loops](#list-og-foreach-loops)
+
 ## Methods and properties
 
 Alle datatyper er _objekter_, hvilket betyder, at de har _methods_ og _properties_.
