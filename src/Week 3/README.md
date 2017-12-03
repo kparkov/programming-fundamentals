@@ -72,7 +72,7 @@ Navnet starter ikke med Donald.
 
 Havde vi i stedet kaldt `name.StartsWith("Vladimir")`, så ville beskeden have været positiv. 
 
-Vi siger, at `StartsWith` er en metode, der tager en parameter af typen tekst. Den _returnerer_ herefter en `bool` (`true` eller `false`), der angiver om variablen starter med den givne parameter.
+Vi siger, at `StartsWith` er en metode, der tager en parameter af typen `string`. Den _returnerer_ herefter en `bool` (`true` eller `false`), der angiver om variablen starter med den givne parameter.
 
 En method kan sommetider tage _flere_ parametre, og her er rækkefølgen vigtig.
 
@@ -90,7 +90,7 @@ Output:
 The quick brown bear jumps over the lazy dog.
 ```
 
-`Replace` tager to parametre: den første er teksten vi leder efter. Den anden er teksten, som skal stå i stedet. Bytter vi om på rækkefølgen, ændrer vi også betydningen.
+`Replace` er en method, der finder forekomster af den først givne parameter, og skifter dem ud med den anden parameter. Den første parameter er altså teksten vi leder efter. Den anden er teksten, som skal stå i stedet. Bytter vi om på rækkefølgen, ændrer vi også betydningen.
 
 ### Flere eksempler på `string` methods
 
@@ -116,6 +116,8 @@ name.IndexOf("wuut");  // => -1
 // Get a substring from a start index and a count
 name.Substring(4, 4);  // => "zo A"
 ```
+
+### Øvelse: _detaljer følger_
 
 ## `List` og `foreach` loops
 
@@ -193,4 +195,4 @@ fruits.Reverse();                // => [void] (now sorted to Pineapple, Orange, 
 fruits.Clear();                  // => [void]
 ```
 
-## Afsluttende øvelse: 
+## Afsluttende øvelse: _detaljer følger_
