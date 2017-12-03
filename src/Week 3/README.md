@@ -7,6 +7,8 @@ Vi har arbejdet i konteksten af komplekse typer før. Nøgleordet `class` erklæ
 
 Den første komplekse type vi skal kigge på, er `List`, og man vil med det samme bemærke flere ting i erklæringen, der stikker ud i forhold til en simpel datatype.
 
+Inden vi dykker ned i `List`, skal vi kigge lidt på _methods and properties_.
+
 ## Indhold
 
 - [Methods and properties](#methods-and-properties)
