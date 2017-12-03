@@ -1,4 +1,4 @@
-# Uge 3: lister
+# Uge 3: lister og objekter
 Indtil nu har vi kun arbejdet med simple _built-in_ typer (`string`, `ìnt`, `bool`, osv.). Der er i virkeligheden 15 built-in typer i C#, men de fleste bruges sjældent.
 
 Built-in typerne er kendetegnet ved, at de er datatypernes grundstoffer. Når vi denne gang stifter bekendtskab med den første _komplekse type_, er det værd at bemærke, at alle komplekse typer dybest set er opbygget af _built-ins_, hvis vi graver dybt nok.
