@@ -102,7 +102,7 @@ The quick brown bear jumps over the lazy dog.
 ```csharp
 string name = "Shinzo Abe";
 
-// Test for occurence of a substring within the string
+// Test for occurrence of a substring within the string
 name.Contains("zo");   // => true
 name.Contains("wuut"); // => false
 
@@ -113,17 +113,17 @@ name.EndsWith("Shin"); // => false
 // Set all characters to their lower variant
 name.ToLower();        // => shinzo abe
 
-// Find the index (position) of the first occurence of substring within the string
+// Find the index (position) of the first occurrence of substring within the string
 name.IndexOf("Ab");    // => 7
 name.IndexOf("Shin");  // => 0
 name.IndexOf("wuut");  // => -1
 
-// Find the index (position) of the first occurence of substring starting at a specific index
+// Find the index (position) of the first occurrence of substring starting at a specific index
 "Hurra Hurra Hurra!".IndexOf("H", 3);   // => 6
 "Hurra Hurra Hurra!".IndexOf("H", 6);   // => 6
 "Hurra Hurra Hurra!".IndexOf("H", 7);   // => 12
 
-// Find the index (position) of the last occurence of substring within the string
+// Find the index (position) of the last occurrence of substring within the string
 "ABBA".LastIndexOf("B")  // => 2
 
 // Get a substring from a start index and a count
@@ -202,16 +202,16 @@ List<string> fruits = new List<string>()
     "Pineapple"
 };
 
-// Test for occurence of an element in the list
+// Test for occurrence of an element in the list
 fruits.Contains("Banana");       // => true
 fruits.Contains("Pair");         // => false
 
-// Find the index (position) of the first occurence of an item
+// Find the index (position) of the first occurrence of an item
 fruits.IndexOf("Orange");        // => 1
 fruits.IndexOf("Pineapple");     // => 3
 fruits.IndexOf("Ban");           // => -1
 
-// Find the index (position) of the last occurence of an item
+// Find the index (position) of the last occurrence of an item
 fruits.LastIndexOf("Orange");    // => 1
 
 // Sort the elements
