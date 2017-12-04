@@ -55,7 +55,7 @@ namespace Exercises
             int notLeaderScoutAge;
             string group = "(No group yet)";
 
-            int notLeaderAge;
+            
 
             int isScoutLeader;
 
@@ -96,7 +96,6 @@ namespace Exercises
                 else if (isScoutLeader != 1)
                 {
 
-<<<<<<< HEAD
                     Console.WriteLine("Så du er ikke leder. Men hvor gammel er du? Skriv din alder:  ");
                     if (int.TryParse(Console.ReadLine(), out notLeaderScoutAge))
                     {
@@ -147,10 +146,3 @@ namespace Exercises
 }
 
 
-=======
-            Console.WriteLine(group);
-            Console.ReadKey();
-        }
-    }
-}
->>>>>>> master
