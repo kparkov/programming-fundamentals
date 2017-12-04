@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Tracing;
 
 namespace Exercises
 {
@@ -15,84 +16,73 @@ namespace Exercises
             int startNumber = 4;
             int stepNumber = 3;
 
-            int tæller = 0;
-
             // 1A. Write a while loop. It should run as many times as the "repeat" variable states. Write the same line of text to the console each time.
-            Console.WriteLine("1A.");
-            while (repeat > 0)
+            Console.WriteLine("1A");
+
+            int counter = 0;
+            while (counter < repeat)
             {
-                repeat--;
-                Console.WriteLine("Værdien af repeat er: " + repeat);
+                Console.WriteLine("Her er en linie.");
+                counter += 1;
             }
-            Console.WriteLine("Færdig!");
-            repeat = 10;
 
             // 1B. Modify the outputted line so it writes the number of times the loop has been running on screen (1, 2, 3, 4, and so on).
-            Console.WriteLine("1B.");
-            while (repeat > 0)
-            {
-                repeat--;
-                tæller++;
-                Console.WriteLine("Kørsel nr. " + tæller);
-            }
-            Console.WriteLine("Færdig!");
-            repeat = 10;
-            tæller = 0;
+            Console.WriteLine("1B");
 
+            counter = 0;
+            while (counter < repeat)
+            {
+                int result = counter + 1;
+                Console.WriteLine(result);
+                counter += 1;
+            }
 
             // 1C. Modify the numbering, so it begins counting from "startNumber", and still adds 1 each time (4, 5, 6, 7, and so on). It should still run "repeat" TIMES in total. 
-            Console.WriteLine("1C.");
-            while (repeat > 0)
-            {
-                repeat--;
-                tæller++;
-                if (tæller >= startNumber)
-                {
-                    Console.WriteLine("Kørsel nr. " + tæller);
-                }
-            }
-            Console.WriteLine("Færdig!");
-            repeat = 10;
-            tæller = 0;
+            Console.WriteLine("1C");
 
-            // 1D. Modify the numbering, so it adds "stepNumber" instead of 1 each time (4, 7, 10, 13, and so on).
-            Console.WriteLine("1D.");
-            while (repeat > 0)
+            counter = 0;
+            while (counter < repeat)
             {
-                repeat--;
-                tæller += stepNumber;
-                Console.WriteLine("Tæller er " + tæller);
+                int result = counter + startNumber;
+                Console.WriteLine(result);
+                counter += 1;
+
             }
-            Console.WriteLine("Færdig!");
-            repeat = 10;
-            tæller = 0;
+            
+            // 1D. Modify the numbering, so it adds "stepNumber" instead of 1 each time (4, 7, 10, 13, and so on).
+            Console.WriteLine("1D");
+
+            counter = 0;
+            while (counter < repeat)
+            {
+                int result = counter * stepNumber + startNumber;
+                Console.WriteLine(result);
+                counter += 1;
+            }
 
             // 1E. Your solution should use the variables above, and if their values are changed, it should be reflected when we run the loop. It should have no fixed upper limits for repeat.
-            Console.WriteLine("1E.");
-
-            Console.WriteLine("Færdig!");
-            repeat = 10;
-            tæller = 0;
-
             // 1F. In addition to writing the current number, also write whether that number is even or odd (4 is even, 7 is odd, 10 is even, 13 is odd, and so on).
-            Console.WriteLine("1F.");
-            while (repeat > 0)
+            Console.WriteLine("1F");
+
+            counter = 0;
+            while (counter < repeat)
             {
-                repeat--;
-                tæller++;
-                Console.WriteLine("Kørsel nr. " + tæller);
-                if (tæller % 2 == 1)
+                int result = counter * stepNumber + startNumber;
+                bool isEven = result % 2 == 0;
+                string presentation;
+
+                if (isEven)
                 {
-                    Console.WriteLine("(Dette er et Ulige tal)");
+                    presentation = result + " er et lige tal.";
                 }
-                else if (tæller % 2 == 0)
+                else
                 {
-                    Console.WriteLine("(Dette er i øvrigt et lige tal)");
+                    presentation = result + " er et ulige tal.";
                 }
+
+                Console.WriteLine(presentation);
+                counter += 1;
             }
-            Console.WriteLine("Færdig!");
-            repeat = 10;
-            tæller = 0;
 
             // EXERCISE 2
 
@@ -111,6 +101,43 @@ namespace Exercises
             // 1A. Construct an if / else if / else statement that assigns the group depending on the age.
             // 1B. However, if you are a scout leader, you will always be assigned to the "Ledere" group, no matter what your age is.
             // 1C. But they do require that you are at least 15 years of age to become a leader, so if you are less than 15 and a leader, we should write an error.
+
+            if (isScoutLeader)
+            {
+                if (age < 15)
+                {
+                    Console.WriteLine("Der er noget galt. Du er leder, men under 15.");
+                    group = "UGYLDIG";
+                }
+                else
+                {
+                    group = "Ledere";
+                }
+            }
+            else if (age <= 5)
+            {
+                group = "Haletudser";
+            }
+            else if (age >= 6 && age <= 7)
+            {
+                group = "Bævere";
+            }
+            else if (age >= 8 && age <= 10)
+            {
+                group = "Ulveunger";
+            }
+            else if (age >= 11 && age <= 14)
+            {
+                group = "Tropspejdere";
+            }
+            else if (age >= 15 && age <= 16)
+            {
+                group = "Seniorspejdere";
+            }
+            else
+            {
+                group = "Klanspejdere";
+            }
 
             Console.WriteLine(group);
 
