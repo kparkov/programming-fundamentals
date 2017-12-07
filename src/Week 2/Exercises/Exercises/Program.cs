@@ -56,7 +56,12 @@ namespace Exercises
             // 17 - (no limit): klanspejdere
 
             int scoutAge;
-            int notLeaderAge;
+
+            int notLeaderScoutAge;
+            string group = "(No group yet)";
+
+            
+
             int isScoutLeader;
 
             Console.WriteLine("Hej Spejder! Er du leder? Tryk 1 for JA og 2 for NEJ");
@@ -89,39 +94,57 @@ namespace Exercises
                             Console.WriteLine("Du er ikke gammel nok til at være leder, men du kan være Tropspejder!");
                         }
 
+                        Console.ReadKey();
+
                     }
                 }
                 else if (isScoutLeader != 1)
 
               
                 {
-                    Console.WriteLine("Så du er ikke leder? Hvor gammel er du?  ");
-                    if (int.TryParse(Console.ReadLine(), out notLeaderAge))
+
+                    Console.WriteLine("Så du er ikke leder. Men hvor gammel er du? Skriv din alder:  ");
+                    if (int.TryParse(Console.ReadLine(), out notLeaderScoutAge))
                     {
-                        if (notLeaderAge <= 5)
+                        
+                        if (notLeaderScoutAge <= 5)
+
                         {
                             Console.WriteLine("Så er du Haletudse!");
                         }
-                        else if (notLeaderAge >= 6 && notLeaderAge <= 7)
+
+                        else if (notLeaderScoutAge >= 6 && notLeaderScoutAge <= 7)
+                        {
+                            Console.WriteLine("Du er Bæver!");
+                        }
+                        else if (notLeaderScoutAge >= 8 && notLeaderScoutAge <= 10)                       
+
                         {
                             Console.WriteLine("Så er du Bæver!");
                         }
-                        else if (notLeaderAge >= 8 && notLeaderAge <= 10)
+
+                        else if (notLeaderScoutAge >= 11 && notLeaderScoutAge <= 14)                        
+
                         {
                             Console.WriteLine("Så er du Ulveunge!");
                         }
-                        else if (notLeaderAge >= 11 && notLeaderAge <= 14)
+
+                        else if (notLeaderScoutAge >= 15 && notLeaderScoutAge <= 16)                        
+
                         {
                             Console.WriteLine("Så er du Tropspejder!");
                         }
-                        else if (notLeaderAge >= 15 && notLeaderAge <= 16)
+
+                        else if (notLeaderScoutAge >= 17)                        
+
                         {
                             Console.WriteLine("Så er du Seniorspejder!");
                         }
-                        else if (notLeaderAge >= 17)
+                        else if (notLeaderScoutAge >= 17)
                         {
                             Console.WriteLine("Så er du Klanspejder!");
                         }
+                        Console.ReadKey();
                     }
                 }   
             }
