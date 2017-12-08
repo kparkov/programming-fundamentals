@@ -42,7 +42,7 @@ namespace Lists
 
             // b. Calculate the sum of all the numbers in the list.OK
 
-            // c. Create a new list containing all the numbers in 'numbers' that are higher than or equal to 50.
+            // c. Create a new list containing all the numbers in 'numbers' that are higher than or equal to 50. OK
 
 
 
@@ -50,11 +50,32 @@ namespace Lists
             {
                 if (theHighNumbers >= 50) numbersEqualtToOrLargerThanFifty.Add(theHighNumbers);
             }
+
+            //Result block
             Console.WriteLine("The numbers higher than, or equal to 50, in our list or random numbers, are:  ");
+            numbersEqualtToOrLargerThanFifty.Sort();
             numbersEqualtToOrLargerThanFifty.ForEach(Console.WriteLine);
             Console.ReadKey();
 
             // d. Display the three highest numbers in the list.
+
+            numbers.Sort();
+            numbers.Reverse();
+
+            List<int> threeHighestNumbers = numbers.GetRange(0, 3);
+            threeHighestNumbers.Sort();
+            Console.WriteLine("The three highest numbers in the list are:  ");
+            threeHighestNumbers.ForEach(Console.WriteLine);
+
+            Console.ReadKey();
+
+
+
+
+
+           
+
+                                        
 
             // EXERCISE: A MINUSCULE MISTAKE
 
