@@ -54,8 +54,6 @@ namespace MethodsAndProperties
             Console.WriteLine(countOs);
             Console.ReadKey();
 
-
-
             string canadaPrime = "Justin Pierre James Trudeau";
             int canadaPrimeNameLength = canadaPrime.Length;
 
