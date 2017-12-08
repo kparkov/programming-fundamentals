@@ -39,6 +39,11 @@ namespace Exercises
 
                 counter = counter + stepNumber;
             }
+        
+    
+  
+
+         
 
             // EXERCISE 2
 
@@ -94,6 +99,8 @@ namespace Exercises
                     }
                 }
                 else if (isScoutLeader != 1)
+
+              
                 {
 
                     Console.WriteLine("Så du er ikke leder. Men hvor gammel er du? Skriv din alder:  ");
@@ -144,5 +151,7 @@ namespace Exercises
         }
     }
 }
+
+
 
 
