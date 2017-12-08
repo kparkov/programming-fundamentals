@@ -11,6 +11,7 @@ namespace Lists
             // EXERCISE: ORDER FROM CHAOS
 
             List<int> numbers = new List<int>();
+            List<int> numbersEqualtToOrLargerThanFifty = new List<int>();
             Random random = new Random();
 
             int counter = 0;
@@ -31,9 +32,11 @@ namespace Lists
             var randomNumberSum = numbers.Sum();
             Console.WriteLine("The sum of all the numbers in the random number list is: " + randomNumberSum);
  
+
+
             Console.ReadKey();
-            
-            
+
+
             // The list 'numbers' contains 10 random numbers, each in the range 1-100.
             // a. Output all the numbers in the list to the console. OK
 
@@ -41,6 +44,15 @@ namespace Lists
 
             // c. Create a new list containing all the numbers in 'numbers' that are higher than or equal to 50.
 
+
+
+            foreach (int theHighNumbers in numbers)
+            {
+                if (theHighNumbers >= 50) numbersEqualtToOrLargerThanFifty.Add(theHighNumbers);
+            }
+            Console.WriteLine("The numbers higher than, or equal to 50, in our list or random numbers, are:  ");
+            numbersEqualtToOrLargerThanFifty.ForEach(Console.WriteLine);
+            Console.ReadKey();
 
             // d. Display the three highest numbers in the list.
 
