@@ -54,8 +54,7 @@ namespace Debugging
 
             // We now expect 'pool' to contain the numbers from 1 to 36
 
-            Console.WriteLine(pool);
-            Console.ReadKey();
+            
           
 
             //This loop runs while the number of 
