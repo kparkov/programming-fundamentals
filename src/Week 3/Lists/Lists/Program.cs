@@ -57,7 +57,7 @@ namespace Lists
             numbersEqualtToOrLargerThanFifty.ForEach(Console.WriteLine);
             Console.ReadKey();
 
-            // d. Display the three highest numbers in the list.
+            // d. Display the three highest numbers in the list.    OK
 
             numbers.Sort();
             numbers.Reverse();
@@ -80,6 +80,11 @@ namespace Lists
             // EXERCISE: A MINUSCULE MISTAKE
 
             string swedenPrime = "kjell stefan löfven";
+
+            swedenPrime = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(swedenPrime.ToLower());
+
+            Console.WriteLine(swedenPrime);
+            Console.ReadKey();
 
             // Capitalize the first letter of each name in the full name. The solution should - of course - work for any name.
         }
