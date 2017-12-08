@@ -69,21 +69,24 @@ namespace Lists
 
             Console.ReadKey();
 
-
-
-
-
-           
-
                                         
 
             // EXERCISE: A MINUSCULE MISTAKE
 
             string swedenPrime = "kjell stefan löfven";
+            string[] names = swedenPrime.Split(" ");
 
-            swedenPrime = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(swedenPrime.ToLower());
+            foreach (string allNames in names)
+            {
+                Console.Write (char.ToUpper(allNames[0]) + allNames.Substring(1)+" ");  
+            }
+            //swedenPrime.Split(" ").ToList();
 
-            Console.WriteLine(swedenPrime);
+            //swedenPrime = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(swedenPrime.ToLower());
+
+            //Console.WriteLine(swedenPrime);
+
+
             Console.ReadKey();
 
             // Capitalize the first letter of each name in the full name. The solution should - of course - work for any name.
