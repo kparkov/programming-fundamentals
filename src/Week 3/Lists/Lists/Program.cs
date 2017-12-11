@@ -73,13 +73,18 @@ namespace Lists
 
             // EXERCISE: A MINUSCULE MISTAKE
 
-            string swedenPrime = "kjell stefan löfven";
+            string swedenPrime = "ernst merethe flannenfloms";
             string[] names = swedenPrime.Split(" ");
 
             foreach (string allNames in names)
             {
                 Console.Write (char.ToUpper(allNames[0]) + allNames.Substring(1)+" ");  
             }
+
+            string s = String.Format("It is now {0:d} at {0:t}", DateTime.Now);
+            Console.WriteLine();
+            Console.WriteLine(s);
+
             //swedenPrime.Split(" ").ToList();
 
             //swedenPrime = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(swedenPrime.ToLower());
