@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace MerryChristmas
 {
@@ -11,6 +12,11 @@ namespace MerryChristmas
             string greeting = "Merry christmas";
             string exclamation = "!";
             int hoCount = 3;
+
+
+
+            Console.Write(string.Join("", Enumerable.Repeat((laugh.ToUpper() + hyphen.ToUpper()), (hoCount - 1))) + laugh.ToUpper() + " " + greeting.ToUpper() + exclamation.ToUpper());
+            Console.ReadKey();
         }
 
 
