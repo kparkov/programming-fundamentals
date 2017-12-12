@@ -63,6 +63,8 @@ Vi ønsker nu at justere teksten en smule, så vi får lidt tryk på udsagnet. D
 HO HO HO MERRY CHRISTMAS!
 ```
 
+Hvis du har brug for et hint, så genlæs afsnittet om [Methods and properties](https://github.com/kparkov/programming-fundamentals/tree/master/src/Week%203#methods-and-properties).
+
 ### Opgave 3
 
 Til afslutning vil vi gerne have det til at stå helt rigtigt, for der skal jo bindestreg _mellem_ de enkelte "ho", men ikke før eller efter:
