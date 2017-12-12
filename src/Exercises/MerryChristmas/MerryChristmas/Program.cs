@@ -15,7 +15,7 @@ namespace MerryChristmas
 
 
 
-            Console.Write(string.Join("", Enumerable.Repeat((laugh.ToUpper() + hyphen.ToUpper()), (hoCount - 1))) + laugh.ToUpper() + " " + greeting.ToUpper() + exclamation.ToUpper());
+            Console.Write(string.Join("", Enumerable.Repeat((laugh.ToUpper() + hyphen.ToUpper()), (hoCount - 1))) + laugh.ToUpper() + " " + greeting.ToUpper() + exclamation);
             Console.ReadKey();
         }
 
