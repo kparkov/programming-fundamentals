@@ -1,0 +1,15 @@
+﻿using System;
+
+namespace MerryChristmas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string laugh = "ho";
+            string hyphen = "-";
+            string greeting = "Merry christmas";
+            int hoCount = 3;
+        }
+    }
+}
