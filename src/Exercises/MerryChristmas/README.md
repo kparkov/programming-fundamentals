@@ -37,7 +37,7 @@ Solution: `src\Exercises\MerryChristmas\MerryChristmas.sln`
 
 I denne øvelse skal vi konstruere julemandens hilsen.
 
-Der er erklæret 4 variabler på forhånd, og du skal forsøge at **undgå at lave nye string-variabler** i alle øvelserne.
+Der er erklæret 5 variabler på forhånd, og du skal forsøge at **undgå at lave nye string-variabler** i alle øvelserne.
 
 ```csharp
 string laugh = "ho";
