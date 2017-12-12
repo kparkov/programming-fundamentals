@@ -81,7 +81,7 @@ namespace Lists
                 Console.Write (char.ToUpper(allNames[0]) + allNames.Substring(1)+" ");  
             }
 
-            string s = String.Format("It is now {0:d} at {0:t}", DateTime.Now);
+            string s = String.Format("It is now {0:d} : {0:t}, and you're a complete tool!", DateTime.Now);
             Console.WriteLine();
             Console.WriteLine(s);
 
