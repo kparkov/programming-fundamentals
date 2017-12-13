@@ -2,20 +2,20 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace MXmas
+namespace MerryChristmas
 {
     class Program
     {
         static void Main(string[] args)
-     
-
-            {
-                string laugh = "ho";
-                string hyphen = "-";
-                string greeting = "Merry christmas";
-                string exclamation = "!";
-                int hoCount = 3;
-                
+        {
+            string laugh = "ho";
+            string hyphen = "-";
+            string greeting = "Merry christmas";
+            string exclamation = "!";
+            int hoCount = 3;
+        }
+    }
+}                
                 {
                     //Console join - IEnum solution
 
