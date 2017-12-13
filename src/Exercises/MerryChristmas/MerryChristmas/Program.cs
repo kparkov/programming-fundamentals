@@ -30,6 +30,10 @@ namespace MerryChristmas
                 tisTheSeasonToBeJolly.add(exclamation);
 
                 tisTheSeasonToBeJolly.ToArray();
+
+                Console.Write(tisTheSeasonToBeJolly[1];
+                              Console.ReadKey();
+
                 }
                               
 
