@@ -13,10 +13,26 @@ namespace MerryChristmas
             string exclamation = "!";
             int hoCount = 3;
 
+            {
+                //Console join - IEnum solution
 
+                //Console.Write(string.Join("", Enumerable.Repeat((laugh.ToUpper() + hyphen, (hoCount - 1))) + laugh.ToUpper() + " " + greeting.ToUpper() + exclamation);
+                //Console.ReadKey();
+            }
+                {
+                //strings-to-list-to-array-solution
 
-            Console.Write(string.Join("", Enumerable.Repeat((laugh.ToUpper() + hyphen.ToUpper()), (hoCount - 1))) + laugh.ToUpper() + " " + greeting.ToUpper() + exclamation);
-            Console.ReadKey();
+                List<string> tisTheSeasonToBeJolly = new List<string>();
+
+                tisTheSeasonToBeJolly.add(laugh);
+                tisTheSeasonToBeJolly.add(hyphen);
+                tisTheSeasonToBeJolly.add(greeting);
+                tisTheSeasonToBeJolly.add(exclamation);
+
+                tisTheSeasonToBeJolly.ToArray();
+                }
+                              
+
         }
 
 
