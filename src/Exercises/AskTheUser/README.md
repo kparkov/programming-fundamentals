@@ -54,7 +54,7 @@ Lav en ændring i teksten, så den skriver hvor gammel brugeren er.
 
 Vi er kun interesseret i at præsentere brugeren ved fornavn. Hvis brugeren har indtastet flere navne / fuldt navn, skal vi kun bruge det første navn i præsentationen.
 
-## Øvelse 4
+### Øvelse 4
 
 Det er skudår, hvis året kan deles med 4 - medmindre det kan deles med 100, så er det **ikke** skudår - dog, hvis det kan deles med 400, så er det **alligevel** skudår.
 
