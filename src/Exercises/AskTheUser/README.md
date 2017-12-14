@@ -54,6 +54,8 @@ Lav en ændring i teksten, så den skriver hvor gammel brugeren er.
 
 Vi er kun interesseret i at præsentere brugeren ved fornavn. Hvis brugeren har indtastet flere navne / fuldt navn, skal vi kun bruge det første navn i præsentationen.
 
+Se eventuelt [listen over centrale `string`-metoder her](https://github.com/kparkov/programming-fundamentals/tree/master/src/Week%203#flere-eksempler-på-string-methods).
+
 ### Øvelse 4
 
 Det er skudår, hvis året kan deles med 4 - medmindre det kan deles med 100, så er det **ikke** skudår - dog, hvis det kan deles med 400, så er det **alligevel** skudår.
