@@ -34,19 +34,23 @@ int approximateAge = 2017 - birthyearNumber;
 
 Hvis strengen indeholder tegn, der ikke kan konverteres, crasher programmet. Vi siger, at metoden kaster en _exception_. Det skal vi også lære at forhindre, men først i en senere lektion.
 
-## Øvelse 1
+## Øvelserne
+
+Solution: `src\Exercises\AskTheUser\AskTheUser.sln`
+
+### Øvelse 1
 
 Bed høfligt om brugerens navn, fødeår og hjemby. Informationerne skal gemmes i tre forskellige variabler.
 
 Lav en samlet præsentation af brugeren: "Du hedder ..., er født i ..., og bor i ...".
 
-## Øvelse 2
+### Øvelse 2
 
 Lad os lave den beskedne antagelse, at alle brugere er født på årets første dag. 
 
 Lav en ændring i teksten, så den skriver hvor gammel brugeren er.
 
-## Øvelse 3
+### Øvelse 3
 
 Vi er kun interesseret i at præsentere brugeren ved fornavn. Hvis brugeren har indtastet flere navne / fuldt navn, skal vi kun bruge det første navn i præsentationen.
 
