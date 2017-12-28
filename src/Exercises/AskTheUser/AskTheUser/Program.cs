@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AskTheUser
 {
@@ -20,10 +21,14 @@ namespace AskTheUser
 
             if (userName.Contains(" "))
 
-            { Console.WriteLine("Hejsa " + userName.Substring(0 , userName.IndexOf( " "))); }
+            {
+                Console.WriteLine("Hejsa " + userName.Substring(0 , userName.IndexOf( " ")));
+            }
 
             else
+            {
                 Console.WriteLine("Hejsa " + userName);
+            }
 
 
 
@@ -37,26 +42,51 @@ namespace AskTheUser
             Console.WriteLine("Hvilken by er du født i?");
             string userBirthTown = Console.ReadLine();
             int userAge = (2017 - userBirthYearNumber);
-
-            Console.WriteLine("Hej " + userName + "." + " Du er " + userAge + " år gammel, og er født i byen " + userBirthTown + ".");
-
-            int userMinLeapYear = (userAge / 4);
+            int currentYear = DateTime.Now.Year;
 
             
+           
 
-            if((userBirthYearNumber%4) == 0 )
-            { Console.WriteLine("Du har oplevet " + (userMinLeapYear + 1) + " skudår"); }
+            int counterUserYear = userBirthYearNumber;
+            int counterUserLeapYear = 0;
 
-            else
+
+            while (counterUserYear <= currentYear)
             {
-                Console.WriteLine("Du har oplevet " + (userMinLeapYear) + " skudår");
+      
+                if ((counterUserYear % 4) == 0 && counterUserYear % 100 != 0 || counterUserYear % 400 == 0 )
+                {
+                    counterUserLeapYear += 1;
+                }
+                counterUserYear += 1;
             }
+
+            Console.WriteLine("Hej " + userName + "." + " Du er " + userAge + " år gammel, og er født i byen " + userBirthTown + ".");
+            Console.WriteLine("Du har oplevet " + counterUserLeapYear + " skudår");
+
+            Console.ReadKey();
+
+
+
+
+
+            //int userMinLeapYear = (userAge / 4);
+
+
+
+            //if((userBirthYearNumber%4) == 0 )
+            //{ Console.WriteLine("Du har oplevet " + (userMinLeapYear + 1) + " skudår"); }
+
+            //else
+            //{
+            //    Console.WriteLine("Du har oplevet " + (userMinLeapYear) + " skudår");
+            //}
 
 
             //Lav en liste med alle de år user har levet. For hvert år der er deleligt med 4 tilføjes et år til en anden liste eller counter
 
 
-            Console.ReadKey();
+
         }
     }
 }
