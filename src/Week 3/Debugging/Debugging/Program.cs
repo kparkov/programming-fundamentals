@@ -14,14 +14,23 @@ namespace Debugging
             // c. Rename each variable to improve the readability of the entire program.
             // d. Change the error message to something sane that actually gives us information about why the program must terminate.
 
+            //Laver en liste der kan indeholde tal der hedder Pool
             List<int> pool = new List<int>();
+            
+            //Laver en liste der kan indeholde tal der hedder lnum
+
             List<int> lnum = new List<int>();
+
+            //Laver en liste der kan indeholde tal der hedder lnum
             List<int> anum = new List<int>();
 
+            //Laver 3 variable der er tal
             int ub = 36;
             int lnt = 7;
             int ant = 1;
-
+            
+            
+            //Så længe  variablerne lnt+ant er større end variablen ub skriver den koden under, OG DET ER DÅRLIGT for så kommer programmet ikke videre
             if ((lnt + ant) > ub)
             {
                 Console.WriteLine("ERROR! FAILURE INEVITABLE. Success impossible. Process will end. OK, bye.");
@@ -29,6 +38,7 @@ namespace Debugging
                 Environment.Exit(1);
             }
 
+            //Genererer en variabel af tilfældige tal
             Random r = new Random();
 
             int x = 1;
@@ -39,7 +49,8 @@ namespace Debugging
                 x = x + 1;
             }
 
-            // We now expect 'pool' to contain ...
+            // We now expect 'pool' to contain ...36 ints
+            //Så længe listen lnum couner er mindre end variablen lnt ELLER listen anums tæller er mindre en variablen ant
 
             while (lnum.Count < lnt || anum.Count < ant)
             {
