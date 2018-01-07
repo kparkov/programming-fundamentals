@@ -11,6 +11,7 @@ Et grundlæggende kursus i grundlæggende programmering med valg af sproget C# (
 
 - [Lektion 1](src/Week%201/README.md)
 - [Lektion 2](src/Week%202/README.md)
+- [Lektion 3](src/Week%203/README.md)
 
 ## Tutorials
 
