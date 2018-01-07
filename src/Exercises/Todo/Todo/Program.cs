@@ -12,16 +12,42 @@ namespace Todo
 
             };
 
-            Console.WriteLine("Tillykke! Du har ingen opgaver");
-            Console.WriteLine("Tilføj ny opgave:");
-            string userAssignment = Console.ReadLine();
 
-            userTodo.Add(userAssignment);
-        
+            Console.WriteLine("Skriv 'V' for vis liste, eller'T' for ny Todo:");
 
-            Console.WriteLine("Du har " + userTodo.Count + " opgaver på din liste.");
+            string visListe = Console.ReadLine();
 
-            Console.WriteLine("- " + userTodo[0]);
+            if (Console.ReadLine() == visListe);
+            {
+                //foreach assignment in userTodo
+                Console.WriteLine();
+
+            }
+
+            while (true)
+            {
+               
+               
+
+                if(userTodo.Count > 0)
+                {
+                    Console.WriteLine("Du har " + userTodo.Count + " opgaver på din liste.");
+                    Console.WriteLine(string.Empty);
+                }
+
+                else
+                {
+                    Console.WriteLine("Tillykke! Du har ingen opgaver");
+                }
+
+                foreach ( string assignment in userTodo)
+                {
+                    Console.WriteLine("-" + assignment);
+                    Console.WriteLine(string.Empty);
+                }
+                Console.Write("Tilføj ny opgave:");
+                userTodo.Add(Console.ReadLine());
+            };
 
 
 
