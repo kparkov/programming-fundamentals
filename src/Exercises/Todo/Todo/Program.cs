@@ -76,6 +76,11 @@ namespace Todo
                     Console.WriteLine("");
                     Console.WriteLine("Tast 'N' for at oprette ny opgave, 'V' for at se din liste af opgaver eller 'F' for at fjerne en opgave");
                 }
+                else if (userCommand.StartsWith("S"))
+                {
+                    Console.WriteLine("Slut :");
+                    break;
+                }
             }
 
 
