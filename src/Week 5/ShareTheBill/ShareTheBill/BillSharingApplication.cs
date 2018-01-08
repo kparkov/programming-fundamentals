@@ -14,11 +14,11 @@ namespace ShareTheBill
                 "Ronald"
             };
 
-            var username = AskUserForText("Hvad er dit navn?");
+            var username = AskUserForText("Hvad er dit navn");
 
             people.Add(username);
 
-            var eventPrice = AskUserForDecimal("Hvad kostede arrangementet?");
+            var eventPrice = AskUserForDecimal("Hvad kostede arrangementet");
             var pricePerPerson = PricePerPerson(people, eventPrice);
 
             ShowPriceTable(people, eventPrice, pricePerPerson);
@@ -31,7 +31,9 @@ namespace ShareTheBill
         /// <returns>The user answer</returns>
         private string AskUserForText(string question)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            Console.Write(question + "? ");
+            string answer = Console.ReadLine();
+            return answer;
         }
 
         /// <summary>
@@ -41,7 +43,10 @@ namespace ShareTheBill
         /// <returns>The user answer as a decimal</returns>
         private decimal AskUserForDecimal(string question)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            Console.Write(question + "? ");
+            string newAnswer = Console.ReadLine();
+            decimal answer = decimal.Parse(newAnswer);
+            return answer;
         }
 
         /// <summary>
@@ -52,7 +57,7 @@ namespace ShareTheBill
         /// <returns>The price per person</returns>
         private decimal PricePerPerson(List<string> people, decimal total)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            return (total / people.Count);
         }
 
         /// <summary>
@@ -63,7 +68,11 @@ namespace ShareTheBill
         /// <param name="pricePerPerson"></param>
         private void ShowPriceTable(List<string> people, decimal dinnerPrice, decimal pricePerPerson)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            foreach (string person in people)
+            {
+                Console.WriteLine(person + "should pay" + pricePerPerson + " kr.");
+            }
+            return;
         }
     }
 }
