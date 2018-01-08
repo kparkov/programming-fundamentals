@@ -11,7 +11,9 @@ namespace ShareTheBill
             {
                 "Abraham",
                 "Theodore",
-                "Ronald"
+                "Ronald",
+                "Ole",
+                "Joe"
             };
 
             var username = AskUserForText("Hvad er dit navn?");
@@ -29,9 +31,11 @@ namespace ShareTheBill
         /// </summary>
         /// <param name="question">The question to ask</param>
         /// <returns>The user answer</returns>
+
         private string AskUserForText(string question)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            Console.WriteLine(question);
+            return Console.ReadLine();
         }
 
         /// <summary>
@@ -39,9 +43,10 @@ namespace ShareTheBill
         /// </summary>
         /// <param name="question">The question to ask</param>
         /// <returns>The user answer as a decimal</returns>
+
         private decimal AskUserForDecimal(string question)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            return Decimal.Parse(AskUserForText(question));
         }
 
         /// <summary>
@@ -52,7 +57,8 @@ namespace ShareTheBill
         /// <returns>The price per person</returns>
         private decimal PricePerPerson(List<string> people, decimal total)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            return total / people.Count;
+            //throw new NotImplementedException("Denne metode er ikke implementeret.");
         }
 
         /// <summary>
@@ -63,7 +69,13 @@ namespace ShareTheBill
         /// <param name="pricePerPerson"></param>
         private void ShowPriceTable(List<string> people, decimal dinnerPrice, decimal pricePerPerson)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            Console.WriteLine("Måltidet kostede ialt " + dinnerPrice);
+            foreach (string person in people)
+            {
+                Console.WriteLine("Sir/Madam " + person + " Skal betale " + pricePerPerson);
+            }
+
+            //throw new NotImplementedException("Denne metode er ikke implementeret.");
         }
     }
 }

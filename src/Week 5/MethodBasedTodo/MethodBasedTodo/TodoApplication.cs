@@ -36,7 +36,10 @@ namespace MethodBasedTodo
                 }
             }
         }
-
+        /// <summary>
+        /// Viser menuen
+        /// </summary>
+        /// <param name="todo">Tager en liste</param>
         private void ShowMainMenu(List<string> todo)
         {
             BlankLine();
@@ -50,7 +53,10 @@ namespace MethodBasedTodo
             Console.WriteLine("(Q)uit");
             BlankLine();
         }
-
+        /// <summary>
+        /// Asks for new todo item.
+        /// </summary>
+        /// <param name="todo">Todo.</param>
         private void AskForNewTodoItem(List<string> todo)
         {
             Console.Clear();
@@ -128,13 +134,22 @@ namespace MethodBasedTodo
         {
             Console.WriteLine(string.Empty);
         }
-
+        /// <summary>
+        /// Printer strengen 'question' og returnere et input
+        /// </summary>
+        /// <returns>The input string.</returns>
+        /// <param name="question">Question.</param>
         private string AskInputString(string question)
         {
             Console.Write(question + " ");
             return Console.ReadLine();
         }
-
+        /// <summary>
+        /// Anvender metoden AskInputString() til at spørge efter et tal i
+        /// strengen 'question', der returneres ved at parse resultatet som int
+        /// </summary>
+        /// <returns>Input nummer som int</returns>
+        /// <param name="question">Holder et spørgsmål som streng</param>
         private int AskInputNumber(string question)
         {
             var input = AskInputString(question);
@@ -157,7 +172,11 @@ namespace MethodBasedTodo
 
             return input.Substring(0, 1).ToUpper();
         }
-
+        /// <summary>
+        /// Tjekker for hvorvidt todo-listen indeholder noget
+        /// </summary>
+        /// <returns>True hvis todo indeholder noget, ellers false</returns>
+        /// <param name="todo">todo-listen</param>
         private bool HasAnyTodoItems(List<string> todo)
         {
             return todo.Count > 0;
