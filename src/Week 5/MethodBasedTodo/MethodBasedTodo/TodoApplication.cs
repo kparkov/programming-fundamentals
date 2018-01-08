@@ -36,7 +36,10 @@ namespace MethodBasedTodo
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="todo"></param>
         private void ShowMainMenu(List<string> todo)
         {
             BlankLine();
@@ -107,7 +110,10 @@ namespace MethodBasedTodo
                 return "Du har ingen opgaver i øjeblikket.";
             }
         }
-
+        /// <summary>
+        /// aaa
+        /// </summary>
+        /// <param name="todo"></param>
         private void AskDeleteTodoItem(List<string> todo)
         {
             Console.Clear();
