@@ -32,8 +32,9 @@ namespace ShareTheBill
         private string AskUserForText(string question)
         {
             Console.Write(question + "? ");
+            Blankline();
             string answer = Console.ReadLine();
-            return answer;
+            return char.ToUpper(answer[0]) + answer.Substring(1);
         }
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace ShareTheBill
         /// <returns>The user answer as a decimal</returns>
         private decimal AskUserForDecimal(string question)
         {
+            Blankline();
             Console.Write(question + "? ");
             string newAnswer = Console.ReadLine();
             decimal answer = decimal.Parse(newAnswer);
@@ -70,9 +72,14 @@ namespace ShareTheBill
         {
             foreach (string person in people)
             {
-                Console.WriteLine(person + "should pay" + pricePerPerson + " kr.");
+                Blankline();
+                Console.WriteLine(person + " skal betale " + pricePerPerson + " kr.");
             }
             return;
+        }
+        private void Blankline()
+        {
+            Console.WriteLine("");
         }
     }
 }
