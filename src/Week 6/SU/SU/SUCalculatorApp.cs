@@ -10,21 +10,20 @@ namespace SU
         {
             Console.WriteLine("Indtast din alder: ");
             Console.ReadLine();
-            
 
-           //Console.ReadKey();
 
-            decimal extrasToSuBase = 0;
+            //Console.ReadKey();
+
+            Console.WriteLine("Hvad er dine forældres indkomst? ");
+
+
+            decimal extrasToSuBase = CalculateExtraSU(income, residence);
             decimal suBase = 0;
             int income = 0;
             bool continueProgram = true;
 
-
-
-
-
             while (continueProgram) ;
-
+        }
             //ungdomsudd = 1
             //videregående = 2
             //anden udd = 3
@@ -36,7 +35,7 @@ namespace SU
             //edustart før 1/7-2014 = true
             //edustart efter 1/7-2014 = false
             
-        }
+
         public decimal CalculateSuBase (int education, int residence, int age, bool eduStart, bool dispensation, bool continueProgram)
         {
             if (dispensation) return 3907;
@@ -54,13 +53,10 @@ namespace SU
                 if (age < 20) return 1348; else return 3028;
             }
             if (education == 1 && residence == 1 && !eduStart) return 946;
-            
-
-
-         
+ 
         }
             
-        }
+
 
 
 
@@ -70,35 +66,13 @@ namespace SU
 
         public decimal CalculateExtraSU (int income, int residence)
         {
-            if (residence == 1)
-            {
-                if (income < 100000)
-                {
-                    decimal extrasToSuBase = 3000;
-                    return extrasToSuBase;
-                }
-                else if (income >= 100000 && income < 300000)
-                {
-                    decimal extrasToSuBase = 2000;
-                    return extrasToSuBase;
-                }
-                else if (income >= 300000 && income < 500000)
-                {
-                    decimal extrasToSuBase = 1000;
-                    return extrasToSuBase;
-                }
-                else if (income >= 500000)
-                {
-                    decimal extrasToSuBase = 0;
-                    return extrasToSuBase;
-                }
-                  
-            }
-            else if (residence == 2)
-            {
-                decimal extrasToSuBase = 3000;
-                return extrasToSuBase;
-            }
+        if (residence == 1 && income < 100000) return 3000;
+
+        if (income >= 100000 && income < 299999) return 2000;
+
+        if (income < 500000) return 1000;
+
+        else return 0;
         }
         
 
