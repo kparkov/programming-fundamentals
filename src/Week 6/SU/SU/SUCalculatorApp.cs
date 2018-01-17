@@ -22,6 +22,11 @@ namespace SU
             Console.WriteLine("Velkommen til SU-beregneren.");
             BlankLine();
             Console.WriteLine("Du skal indtaste nogle oplysninger om dig selv.");
+            BlankLine();
+            foreach (string education in educationTypes) Console.WriteLine(educationTypes.Count + education);
+
+
+            GetUserInput(educationTypes);
             Console.ReadLine();
 
 
@@ -76,6 +81,14 @@ namespace SU
 
                     return 0;
 
+        }
+
+        public int GetUserInput (List<string> educationTypes)
+        {
+            foreach (string choice in educationTypes)
+            {
+
+            }
         }
 
 
