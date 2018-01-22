@@ -1,0 +1,22 @@
+@startuml
+(*) --> "Start fight"
+--> "Select active fighter"
+--> "Attack opponent"
+--> "Roll for defense"
+
+if "Did we hit?"
+	-left->[Yes] "Roll for damage"
+	-down-> "Deduct from opponents hit points"
+
+	If "Is opponent dead?" then
+		-down->[Dead] "Combat finished"
+		-down-> (*)
+	else
+		-right->[Alive] "Switch active fighter"
+	endif
+else
+	-down->[No] "Switch active fighter"
+endif
+
+-left-> "Attack opponent"
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+(*) --> Start game
+	--> Generate gladiators
+	--> Pick two random fighters
+	-> Resolve combat
+	--> Present result
+	--> Move dead guy to graveyard
+
+	if "Number of combatants > 1?" then
+		-left->[Yes] Pick two random fighters
+	else
+		-down->[No] Present the winner
+		--> End game
+		--> (*)
+	endif
+@enduml
