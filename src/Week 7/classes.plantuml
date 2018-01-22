@@ -8,7 +8,7 @@ class Application {
 	void Run()
 }
 
-class GladiatorFightController {
+class GameController {
 	- List<Gladiator> Combatants { get; }
 	- List<Gladiator> Graveyard { get; }
 	+ void RunGame()
@@ -18,8 +18,8 @@ class GladiatorFightController {
 
 class CombatController {
 	- int RoundNumber { get; set; }
-	+ CombatResult StartFight(Gladiator a, Gladiator b)
-	- bool Round(Gladiator a, Gladiator b)
+	+ CombatResult RunFight(Gladiator a, Gladiator b)
+	- RoundResult RunRound(Gladiator a, Gladiator b)
 }
 
 class RoundResult {
@@ -64,9 +64,11 @@ class DiceCup {
 }
 
 class View {
-	+ ShowRemainingGladiators(List<Gladiator> list)
-	+ ShowRoundResult(RoundResult result)
-	+ ShowCombatResult(CombatResult result)
+	+ void ShowStartMessage()
+	+ void ShowRemainingGladiators(List<Gladiator> list)
+	+ void ShowRoundResult(RoundResult result)
+	+ void ShowCombatResult(CombatResult result)
+	+ void ShowGameResult(Gladiator winner)
 }
 
 class Names {
@@ -74,10 +76,10 @@ class Names {
 }
 
 Program ..> Application
-Application ..> GladiatorFightController
-GladiatorFightController .> Gladiator
-GladiatorFightController ..> CombatController
-GladiatorFightController .left.> View
+Application ..> GameController
+GameController .> Gladiator
+GameController ..> CombatController
+GameController .left.> View
 CombatController ..> CombatResult
 CombatController ..> RoundResult
 CombatController .> Gladiator

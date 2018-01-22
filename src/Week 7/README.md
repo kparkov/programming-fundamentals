@@ -1,6 +1,6 @@
 # Klasser
 
-
+Klasser er endestationen for dette kursus, og derfor også det sidste, vi egentlig kommer til at lære. Det er her vi lærer, hvorfor det egentlig hedder _objektorienteret programmering_.
 
 ## Øvelse: Gladiator fight
 
@@ -14,4 +14,40 @@
 
 ## Klassediagram
 
-![classes](http://www.plantuml.com/plantuml/svg/VLLDZzem43tNlyB7e2tyWLPe4MXf9OfMGTqUgXvCF9krwdWYsm5LYFzUVv348S0fUERDp9lny_1iBDEsgIGXXMJ6q5UDfMOLFP5FJ_Jal5OKPtf0mUaF9bHch1Qg_Fs7CbsQ2JctSOkwbg9mQ5G-DWJaZSeIo5eoBfX5_IBA3xj4PJLA2ThZftGZZFtQGUPqYTMUMQQieITQWlr2pxTWQyqEy8zfdg2UQ5j-pIfm55nSJ9U3QQIbthn1hAChW9SQc8KkiKc9nzXhma9PccEZ-BQfzjuOwvkEnA3apiyvD9vrHIZxt0-5xWEPFQACQH_WEcO1UAaGRgo7BQnbnT-UrtdeNi4xA7xb3iM_2Jim-ZvNh68bzEQhqTncy4ieTRV-1atg6uiaPejoerjtOUC1UsQnpLs1-WuWD6hW0S8r_8eY4Th5FI3ifP8UByIK8pP9HsUIQyEwHWNAJePZp9s8iZxekrb8SO1KS2i1KMFT0yoPubXH7JvjkftWO4PtvQq_wu7PvOi5_G-FCJvoqh-Ko2YfNy2ogUCL1CI2yyopuW96OMtTfeg7y4ITPKxVc6nWy9JU11nZsjq77dEet4vnSqpUtVK3b-uywG9wlMUfzdNuTB1KbTb0eYsm8-ILPGPQMuEDqzx6vU6WxLASpURfeYFfqlE-UnkEt5rzQT03r6m-Ma8Fq1BUhOlmioQZtTNdYYEvZKY6UmEGaXvxq_Ajad3AyQYcNe0zSJfhQWSCLv1QjM_8EIx1X91djwlSdzH_ "classes")
+![classes](http://www.plantuml.com/plantuml/svg/VLLDZzem43qtlyB7e2tyWLPe4QYq4ejMGTqUgXvCCfkrwjYHxO0gn7-lFqWy9i0fUEQzcUUPyV2i3LMcQtYMbPngJLwLh1Ljo2dxz4HErcjOUIO7oIhoGfd8jL5CrB__4AfgFSdEFM_HjfoL5Ys5utf2qOaSGTQSLemQgRwn-iCifJ1ASWxAuQTamxJvEa3cP2cRFJLK64rEf0RpXPnlmTQA7k0VLHL2FP4-_PesO2LONWXNWEwu8SwyaR8DBWzUAg06Xi0Q2m_SQy5C65B8JbJRhjaxOyYl1n59IYl6NpiVKX3wEPQ4xBqK7oyo_F41Or28URvp4ROmXfP_exvpwbx1EuZgohsNafFlp2H6TzyLRMWDqNnLejiAVZ4XxkRVI8rzus49qSBOaQrjtBZGJbcuvgwKwWx0NrJ30uIzyAjaQE0kxaIm6nbyl0WJLjW4bqwZjicsbGA4cQHbBEmmvP7qGoyuEm0Ul1M3C6l3Gooeg6H3bF_quNQi0ZtgbRF-R1EpZHSIkXyEenrp4bzCK8Jobx3isj02ZrXKLUvKLGn6j3vlruI3VwhMCYTlb7UGFAat1aSKTlSXZpktYLv0QrkQV9Au2cZixh5rHk_pUX5mUxvYnKUHumUY_2V5uldDas6-XNRxuuADNJxwCKTtTCEga_5TWmaDt8QzPA7zlftDvdY7PdYVEj-zvPdTtQgOz00rcu_ssmCqXtTZ6QvzsMWjnbYXEBSHg1Kt05Zqs8lJzyCffvKyYgcRwIYSpBhM0dqBi5Mv2rd7XPnbsRDTV_R_xpy0 "classes")
+
+## Gantt
+
+```mermaid
+gantt
+       dateFormat  YYYY-MM-DD
+       title API project
+
+       section API development
+	   Sandkasse			:done		api0, 1w
+	   Sprintopsætning 		:		api1, after api0, 1w
+
+```
+
+       #Completed task            :done,    des1, 2014-01-06,2014-01-08
+       #Active task               :active,  des2, 2014-01-06, 3d
+       #Future task               :         des3, after des2, 5d
+       #Future task2              :         des4, after des3, 5d
+
+       #section Critical tasks
+       #Completed task in the critical line :crit, done, 2014-01-06,24h
+       #Implement parser and jison          :crit, done, after des1, 2d
+       #Create tests for parser             :crit, active, 3d
+       Future task in critical line        :crit, 5d
+       Create tests for renderer           :2d
+       Add to mermaid                      :1d
+
+       section Documentation
+       Describe gantt syntax               :active, a1, after des1, 3d
+       Add gantt diagram to demo page      :after a1  , 20h
+       Add another diagram to demo page    :doc1, after a1  , 48h
+
+       section Last section
+       Describe gantt syntax               :after doc1, 3d
+       Add gantt diagram to demo page      :20h
+       Add another diagram to demo page    :48h
