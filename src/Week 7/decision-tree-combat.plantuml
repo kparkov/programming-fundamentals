@@ -1,0 +1,26 @@
+@startuml
+(*) -> "Start fight"
+-> "Assign random attacker"
+
+partition Round {
+	--> "Attacker attacks defender"
+	--> "Opponent defense roll"
+
+	--> if "Did we hit?"
+		-->[Yes] "Roll for damage"
+		--> "Deduct from opponents hit points"
+
+		--> If "Is opponent dead?" then
+}
+			-->[Dead] "Combat finished"
+			--> (*)
+
+		else
+			-right->[Alive] "Switch attacker / defender"
+			-left-> "Attacker attacks defender"
+		endif
+	else
+		-down->[No] "Switch attacker / defender"
+	endif
+
+@enduml
