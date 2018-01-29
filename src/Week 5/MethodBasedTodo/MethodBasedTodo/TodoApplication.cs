@@ -10,7 +10,7 @@ namespace MethodBasedTodo
         {
             bool continueProgram = true;
             List<string> todo = new List<string>();
-
+            
             while (continueProgram)
             {
                 Console.Clear();
@@ -36,9 +36,13 @@ namespace MethodBasedTodo
                 }
             }
         }
-
+        /// <summary>
+        /// Viser linierne 
+        /// </summary>
+        /// <param name="todo"></param>
         private void ShowMainMenu(List<string> todo)
         {
+            
             BlankLine();
             Console.WriteLine("(T)ilføj opgave");
 
@@ -50,7 +54,7 @@ namespace MethodBasedTodo
             Console.WriteLine("(Q)uit");
             BlankLine();
         }
-
+        
         private void AskForNewTodoItem(List<string> todo)
         {
             Console.Clear();

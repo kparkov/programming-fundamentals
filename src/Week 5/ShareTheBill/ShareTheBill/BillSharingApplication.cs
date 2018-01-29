@@ -31,7 +31,10 @@ namespace ShareTheBill
         /// <returns>The user answer</returns>
         private string AskUserForText(string question)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            Console.WriteLine(question);
+            string answer = Console.ReadLine();
+            return answer;
+
         }
 
         /// <summary>
@@ -41,7 +44,11 @@ namespace ShareTheBill
         /// <returns>The user answer as a decimal</returns>
         private decimal AskUserForDecimal(string question)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            Console.WriteLine(question);
+            return decimal.Parse(Console.ReadLine());
+           
+           
+            
         }
 
         /// <summary>
@@ -52,7 +59,7 @@ namespace ShareTheBill
         /// <returns>The price per person</returns>
         private decimal PricePerPerson(List<string> people, decimal total)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+            return total / (people.Count);
         }
 
         /// <summary>
@@ -63,7 +70,15 @@ namespace ShareTheBill
         /// <param name="pricePerPerson"></param>
         private void ShowPriceTable(List<string> people, decimal dinnerPrice, decimal pricePerPerson)
         {
-            throw new NotImplementedException("Denne metode er ikke implementeret.");
+           foreach(string person in people)
+            {
+                Console.WriteLine(person + " skal betale " + pricePerPerson + "kr");
+            }
+               
+                
+                
+       
+                
         }
     }
 }
