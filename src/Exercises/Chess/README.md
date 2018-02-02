@@ -46,7 +46,9 @@ Forestil dig et skakbræt. Der er et hvidt tårn og én modstanderbrik på plade
 
 Vi skal finde ud af, om tårnet kan slå modstanderbrikken i næste træk. Vi kender tårnets position og modstanderbrikkens position. Nu ønsker vi at skrive en metode, der returnerer, om modstanderbrikken står i slag.
 
-Vi antager, at spillepladen er inddelt i kolonner og rækker, der er indekseret som 0-7 i begge dimensioner:
+Vi antager, at spillepladen er inddelt i kolonner og rækker, der er indekseret som 0-7 i begge dimensioner.
+
+Tårnet slår i en lige linie, op/ned eller til siderne.
 
 | |0|1|2|3|4|5|6|7|
 |---|---|---|---|---|---|---|---|---|
