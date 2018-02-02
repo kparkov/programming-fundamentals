@@ -48,17 +48,16 @@ Vi skal finde ud af, om tårnet kan slå modstanderbrikken i næste træk. Vi ke
 
 Vi antager, at spillepladen er inddelt i kolonner og rækker, der er indekseret som 0-7 i begge dimensioner:
 
-
 | |0|1|2|3|4|5|6|7|
 |---|---|---|---|---|---|---|---|---|
-|0|||||||||
-|1|||||||||
-|2|||||||||
-|3||♖|||||||
-|4|||||||||
-|5|||||||||
-|6|||||♟||||
-|7|||||||||
+|0||↑|||||||
+|1||↑|||||||
+|2||↑|||||||
+|3|←|♖|→|→|→|→|→|→|
+|4||↓|||||||
+|5||↓|||||||
+|6||↓|||♟||||
+|7||↓|||||||
 
 I det ovenstående eksempel står tårnet i række 3, kolonne 1. Men vi er selvfølgelig interesseret i at løse opgaven for alle tænkelige positioner.
 
@@ -76,6 +75,19 @@ public bool CanRookMoveTo(int currentRow, int currentColumn, int targetRow, int 
 ## Øvelse 2: Bonden
 
 Løs samme opgave, men for en hvid bonde, der har tur. Antag, at de hvide bønder startede i række 6, og derfor rykker frem mod række 0.
+
+Bonden kan som bekendt slå et felt skråt fremad:
+
+| |0|1|2|3|4|5|6|7|
+|---|---|---|---|---|---|---|---|---|
+|0|||||||||
+|1|||||||||
+|2|||||||||
+|3|||||||||
+|4|||||||||
+|5|||↖||↗||||
+|6||||♙|||||
+|7|||||||||
 
 ```csharp
 public bool CanPawnMoveTo(int currentRow, int currentColumn, int targetRow, int targetColumn) 
@@ -95,9 +107,35 @@ public bool CanKingMoveTo(int currentRow, int currentColumn, int targetRow, int 
 }
 ```
 
+Kongen kan rykke et felt i vilkårlig retning:
+
+| |0|1|2|3|4|5|6|7|
+|---|---|---|---|---|---|---|---|---|
+|0|||||||||
+|1||||↖|↑|↗|||
+|2||||←|♔|→|||
+|3||||↙|↓|↘|||
+|4|||||||||
+|5|||||||||
+|6|||||||||
+|7|||||||||
+
 ## Øvelse 4: Hesten
 
 Hesten er måske lidt mere tricky.
+
+Hesten springer 2 op/ned og 1 til siden, eller 2 til siden og 1 op/ned.
+
+| |0|1|2|3|4|5|6|7|
+|---|---|---|---|---|---|---|---|---|
+|0|||||||||
+|1|||||||||
+|2|||X||X||||
+|3||X||||X|||
+|4||||♘|||||
+|5||X||||X|||
+|6|||X||X||||
+|7|||||||||
 
 ```csharp
 public bool CanKnightMoveTo(int currentRow, int currentColumn, int targetRow, int targetColumn) 
@@ -110,6 +148,19 @@ public bool CanKnightMoveTo(int currentRow, int currentColumn, int targetRow, in
 
 Nu bliver det ubehageligt.
 
+Løberen kan slå så langt det skal være, diagonalt.
+
+| |0|1|2|3|4|5|6|7|
+|---|---|---|---|---|---|---|---|---|
+|0|||↖||||↗||
+|1||||↖||↗|||
+|2|||||♗||||
+|3||||↙||↘|||
+|4|||↙||||↘||
+|5||↙||||||↘|
+|6|↙||||||||
+|7|||||||||
+
 ```csharp
 public bool CanBishopMoveTo(int currentRow, int currentColumn, int targetRow, int targetColumn) 
 {
@@ -120,6 +171,19 @@ public bool CanBishopMoveTo(int currentRow, int currentColumn, int targetRow, in
 ## Øvelse 6: Dronningen
 
 Argh! Men på den anden side: hvis du har klaret den hertil, kan du _helt sikkert_ også klare den sidste.
+
+Dronningen slår på linierne _og_ på diagonalerne.
+
+| |0|1|2|3|4|5|6|7|
+|---|---|---|---|---|---|---|---|---|
+|0||↑||||↗|||
+|1||↑|||↗|||
+|2||↑||↗|||||
+|3|↖|↑|↗||||||
+|4|←|♕|→|→|→|→|→|→|
+|5|↙|↓|↘||||||
+|6||↓||↘|||||
+|7||↓|||↘||||
 
 ```csharp
 public bool CanQueenMoveTo(int currentRow, int currentColumn, int targetRow, int targetColumn) 
