@@ -2,7 +2,7 @@
 
 Disse opgaver resulterer i en ret kort stump kode, og er først og fremmest hjernevridere. Du kan vælge at beskrive løsningen i ord eller som kode. Det vanskelige består i at udtænke løsningen, og omsætningen til kode er derfor sekundær. 
 
-Opgaverne bliver betydeligt sværere hen ad vejen. Hvis man klarer dem alle, 
+Opgaverne bliver betydeligt sværere hen ad vejen.
 
 Inden opgaven er det en god ting at stifte bekendtskab med metoderne `Math.Min` og `Math.Abs`:
 
