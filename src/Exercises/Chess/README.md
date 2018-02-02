@@ -106,7 +106,7 @@ public bool CanKnightMoveTo(int currentRow, int currentColumn, int targetRow, in
 }
 ```
 
-## Øvelse 5: Løber
+## Øvelse 5: Løberen
 
 Nu bliver det ubehageligt.
 
@@ -117,7 +117,7 @@ public bool CanBishopMoveTo(int currentRow, int currentColumn, int targetRow, in
 }
 ```
 
-## Øvelse 6: Dronning
+## Øvelse 6: Dronningen
 
 Argh! Men på den anden side: hvis du har klaret den hertil, kan du _helt sikkert_ også klare den sidste.
 
