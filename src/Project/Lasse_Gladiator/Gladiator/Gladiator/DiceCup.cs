@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Gladiator
 {
-    class DiceCup
+    public class DiceCup
     {
         private List<Die> Dice { get; set; }
 

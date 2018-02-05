@@ -8,13 +8,11 @@ namespace Gladiator
         {
             var firstwarrior = new Gladiator("Ibbermand");
             var secondwarrior = new Gladiator("Jørgen");
-            firstwarrior.PresentYourself();
-            secondwarrior.PresentYourself();
+            var combatController = new CombatController();
 
-            firstwarrior.Attack(secondwarrior);
+            combatController.Fight(firstwarrior, secondwarrior);
 
-            secondwarrior.PresentYourself();
-
+      
 
             Console.ReadKey();
         }
