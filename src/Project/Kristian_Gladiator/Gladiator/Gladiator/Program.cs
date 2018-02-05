@@ -8,15 +8,9 @@ namespace Gladiator
         {
             var firstwarrior = new Gladiator("Spartacus");
             var secondwarrior = new Gladiator("Maximus");
-            
-            firstwarrior.PresentYourself();
-            secondwarrior.PresentYourself();
 
-            while (secondwarrior.IsAlive())
-            {
-                firstwarrior.Attack(secondwarrior);
-                secondwarrior.PresentYourself();
-            }
+            var combatController = new CombatController();
+            combatController.Fight(firstwarrior, secondwarrior);
             
             Console.ReadKey();
         }
