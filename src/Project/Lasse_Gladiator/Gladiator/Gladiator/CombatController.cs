@@ -24,6 +24,7 @@ namespace Gladiator
 
             while (DoContinueFight(a, b)) 
             {
+                System.Threading.Thread.Sleep(500);
                 var temp = attacker;
                 attacker = defender;
                 defender = temp;
