@@ -1,0 +1,92 @@
+@startuml
+
+class Program {
+	+ {static} void Main(string[] args)
+}
+
+class Application {
+	void Run()
+}
+
+class GameController {
+	- List<Gladiator> Combatants { get; }
+	- List<Gladiator> Graveyard { get; }
+	+ void RunGame()
+	- CombatResult GameLoop()
+	- void CreateGladiators()
+}
+
+class CombatController {
+	- int RoundNumber { get; set; }
+	+ CombatResult RunFight(Gladiator a, Gladiator b)
+	- RoundResult RunRound(Gladiator a, Gladiator b)
+}
+
+class RoundResult {
+	+ Gladiator Attacker { get; }
+	+ Gladiator Defender { get; }
+	+ bool Hit { get; }
+	+ int Damage { get; }
+}
+
+class CombatResult {
+	+ Gladiator Winner { get; }
+	+ Gladiator Loser { get; }
+}
+
+class Gladiator {
+	+ string Name { get; set; }
+	+ int AttackScore { get; set; }
+	+ int DefenseScore { get; set; }
+	+ int HitPoints { get; set; }
+
+	+ Gladiator()
+	+ Gladiator(string name)
+	+ bool Hits(Gladiator opponent)
+	+ int DamageRoll()
+	+ bool IsAlive()
+}
+
+class Die {
+	- {static} Random random
+	+ int Sides { get; }
+	+ int SideUp { get; }
+	+ Die()
+	+ Die(int sides)
+	+ void Roll()
+}
+
+class DiceCup {
+	+ void Add(Die die)
+	+ void Roll()
+	+ int Sum()
+	+ List<int> Values()
+}
+
+class View {
+	+ void ShowStartMessage()
+	+ void ShowRemainingGladiators(List<Gladiator> list)
+	+ void ShowRoundResult(RoundResult result)
+	+ void ShowCombatResult(CombatResult result)
+	+ void ShowGameResult(Gladiator winner)
+}
+
+class Names {
+	+ string GetRandomName()
+}
+
+Program ..> Application
+Application ..> GameController
+GameController .> Gladiator
+GameController ..> CombatController
+GameController .left.> View
+CombatController ..> CombatResult
+CombatController ..> RoundResult
+CombatController .> Gladiator
+CombatController .left.> View
+DiceCup o-down- Die
+Gladiator .up.> Names
+Gladiator .right.> DiceCup
+
+
+@enduml
