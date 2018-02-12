@@ -6,11 +6,8 @@ namespace Gladiator
     {
         static void Main(string[] args)
         {
-            var firstwarrior = new Gladiator("Spartacus");
-            var secondwarrior = new Gladiator("Maximus");
-
-            var combatController = new CombatController();
-            combatController.Fight(firstwarrior, secondwarrior);
+            var gameController = new GameController();
+            gameController.RunGame();
             
             Console.ReadKey();
         }

@@ -8,7 +8,7 @@ namespace Gladiator
     {
         public string Name { get; private set; }
 
-        public int AttackScore { get; private set; }
+        public int AttackScore { get; set; }
         public int DefenseScore { get; private set; }
         public int HitPoints { get; set; }
 

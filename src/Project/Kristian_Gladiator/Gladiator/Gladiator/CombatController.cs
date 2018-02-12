@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 
 namespace Gladiator
 {
@@ -13,10 +10,10 @@ namespace Gladiator
         public CombatController()
         {
             View = new CombatView();
-            SuspenseLevel = 2000;
+            SuspenseLevel = 300;
         }
 
-        public void Fight(Gladiator a, Gladiator b)
+        public CombatResult Fight(Gladiator a, Gladiator b)
         {
             View.GladiatorPresentation(a);
             View.GladiatorPresentation(b);
@@ -36,6 +33,12 @@ namespace Gladiator
             }
 
             View.CombatResult(attacker, defender);
+
+            return new CombatResult()
+            {
+                Winner = attacker,
+                Loser = defender
+            };
         }
 
         private bool DoContinueFight(Gladiator a, Gladiator b)
