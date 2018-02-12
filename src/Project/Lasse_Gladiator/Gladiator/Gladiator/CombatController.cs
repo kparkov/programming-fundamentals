@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+
 
 namespace Gladiator
 {
@@ -24,7 +26,8 @@ namespace Gladiator
 
             while (DoContinueFight(a, b)) 
             {
-                System.Threading.Thread.Sleep(500);
+                Thread.Sleep(500);
+
                 var temp = attacker;
                 attacker = defender;
                 defender = temp;
