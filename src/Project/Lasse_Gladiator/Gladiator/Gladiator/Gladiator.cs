@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Gladiator
 {
-    class Gladiator
+    public class Gladiator
     {
         public int AttackScore { get; private set; }
         public int DefenceScore { get; private set; }

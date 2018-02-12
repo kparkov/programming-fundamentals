@@ -16,7 +16,7 @@ namespace Gladiator
             View = new CombatView();
         }
 
-        public void Fight(Gladiator a, Gladiator b)
+        public CombatResult Fight(Gladiator a, Gladiator b)
         {
             View.GladiatorPresentation(a);
             View.GladiatorPresentation(b);
@@ -36,6 +36,13 @@ namespace Gladiator
             }
 
             View.CombatResult(attacker, defender);
+
+            return new CombatResult()
+            {
+                Winner = attacker,
+                Loser = defender
+
+            };
         }
 
 

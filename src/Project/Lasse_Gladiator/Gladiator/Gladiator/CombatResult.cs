@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Gladiator
 {
-    class CombatResult
+    public class CombatResult
     {
+        public Gladiator Winner { get; set; }
+        public Gladiator Loser { get; set; }
     }
 }
