@@ -1,0 +1,12 @@
+Sir
+Maester
+Knight
+Praetor
+Legatus
+Praefectus
+Tribuni
+Optio
+Centurion
+Slave
+Beggar
+Merchant

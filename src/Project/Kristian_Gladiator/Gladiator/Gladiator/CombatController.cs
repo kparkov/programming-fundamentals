@@ -5,34 +5,28 @@ namespace Gladiator
     public class CombatController
     {
         private CombatView View { get; set; }
-        private int SuspenseLevel { get; }
 
         public CombatController()
         {
-            View = new CombatView();
-            SuspenseLevel = 300;
+            //View = new CombatView();
         }
 
         public CombatResult Fight(Gladiator a, Gladiator b)
         {
-            View.GladiatorPresentation(a);
-            View.GladiatorPresentation(b);
+            View?.GladiatorPresentation(a);
+            View?.GladiatorPresentation(b);
 
             var attacker = a;
             var defender = b;
 
             while (DoContinueFight(a, b))
             {
-                Thread.Sleep(SuspenseLevel);
-
                 var temp = attacker;
                 attacker = defender;
                 defender = temp;
 
                 PerformAttack(attacker, defender);
             }
-
-            View.CombatResult(attacker, defender);
 
             return new CombatResult()
             {
@@ -43,7 +37,7 @@ namespace Gladiator
 
         private bool DoContinueFight(Gladiator a, Gladiator b)
         {
-            return a.IsAlive() && b.IsAlive();
+            return !a.IsBeaten() && !b.IsBeaten();
         }
 
         private void PerformAttack(Gladiator attacker, Gladiator defender)
@@ -55,19 +49,26 @@ namespace Gladiator
 
             if (isHit)
             {
-                damage = attackRoll - enemysDefenseRoll;
-                defender.HitPoints -= damage;
+                damage = DamageRoll(attacker.Strength);
+                defender.Wounds += damage;
             }
 
-            View.AttackResult(attacker, defender, isHit, damage);
+            View?.AttackResult(attacker, defender, isHit, damage);
         }
 
         private int CombatRoll(int score)
         {
             var cup = new DiceCup();
-            cup.Add(1, 10);
+            cup.Add(1, 20);
             cup.Roll();
             return cup.Sum() + score;
+        }
+
+        private int DamageRoll(int score)
+        {
+            var cup = new DiceCup();
+            cup.Add(1, 6);
+            return score + cup.Roll().Sum();
         }
     }
 }

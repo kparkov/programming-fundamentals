@@ -6,31 +6,52 @@ namespace Gladiator
 {
     public class Gladiator
     {
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
-        public int AttackScore { get; set; }
-        public int DefenseScore { get; private set; }
-        public int HitPoints { get; set; }
+        public int Strength { get; set; } = 0;
+        public int AttackScore { get; set; } = 0;
+        public int DefenseScore { get; set; } = 0;
+        public int Morale { get; set; } = 0;
+        public int Constitution { get; set; } = 0;
+        public int Wounds { get; set; } = 0;
+
+        public int Victories { get; set; } = 0;
 
         public Gladiator(string name)
         {
             Name = name;
-
-            var cup = new DiceCup();
-            cup.Add(2, 6);
-            cup.Roll();
-            AttackScore = cup.Sum();
-            cup.Roll();
-            DefenseScore = cup.Sum();
-
-            HitPoints = 10;
         }
 
         public bool IsAlive()
         {
-            return HitPoints > 0;
+            return HitPoints() > -3;
         }
 
-        
+        public bool IsBeaten()
+        {
+            return !DareFight() || IsUnconscious();
+        }
+
+        public bool DareFight()
+        {
+            return Morale > Wounds;
+        }
+
+        public bool IsWounded()
+        {
+            return Wounds > 0;
+        }
+
+        public bool IsUnconscious()
+        {
+            return Wounds >= Constitution;
+        }
+
+        public void Heal(int hp)
+        {
+            Wounds = Math.Max(Wounds - hp, 0);
+        }
+
+        public int HitPoints() => Constitution - Wounds;
     }
 }

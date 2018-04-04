@@ -29,12 +29,14 @@ namespace Gladiator
             }
         }
 
-        public void Roll()
+        public DiceCup Roll()
         {
             foreach (var die in Dice)
             {
                 die.Roll();
             }
+
+            return this;
         }
 
         public int Sum()

@@ -5,4 +5,16 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\adjectives.txt" />
+    <None Remove="Resources\names.txt" />
+    <None Remove="Resources\titles.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\adjectives.txt" />
+    <EmbeddedResource Include="Resources\names.txt" />
+    <EmbeddedResource Include="Resources\titles.txt" />
+  </ItemGroup>
+
 </Project>
